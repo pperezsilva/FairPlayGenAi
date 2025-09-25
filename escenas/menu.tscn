@@ -1,4 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqwato8424667"]
+[gd_scene load_steps=5 format=3 uid="uid://cqwato8424667"]
+
+[ext_resource type="Texture2D" uid="uid://c3aj11h44misn" path="res://imagenes/menuBackground.png" id="1_vdanu"]
+[ext_resource type="FontFile" uid="uid://b35kvrse3i50k" path="res://fuentes/Dream MMA.ttf" id="2_d7r87"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d7r87"]
+texture = ExtResource("1_vdanu")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_puob0"]
 bg_color = Color(1, 1, 1, 1)
@@ -12,13 +18,20 @@ shadow_offset = Vector2(0, 10)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_d7r87")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -27,15 +40,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -180.0
-offset_top = -92.5
-offset_right = 180.0
-offset_bottom = 92.5
+offset_left = -378.0
+offset_top = -118.0
+offset_right = 37.0
+offset_bottom = 184.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_puob0")
@@ -43,6 +58,7 @@ text = "Jugar"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_puob0")
@@ -50,8 +66,29 @@ text = "Opciones"
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_puob0")
 text = "Salir
 "
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -471.0
+offset_top = -279.0
+offset_right = 502.0
+offset_bottom = -199.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_y = 6
+theme_override_fonts/font = ExtResource("2_d7r87")
+theme_override_font_sizes/font_size = 80
+text = "fairplay genai"
