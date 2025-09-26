@@ -1,13 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqwato8424667"]
+[gd_scene load_steps=8 format=3 uid="uid://cqwato8424667"]
 
-[ext_resource type="Texture2D" uid="uid://c3aj11h44misn" path="res://imagenes/menuBackground.png" id="1_vdanu"]
-[ext_resource type="FontFile" uid="uid://b35kvrse3i50k" path="res://fuentes/Dream MMA.ttf" id="2_d7r87"]
+[ext_resource type="Texture2D" uid="uid://cai6t48xppxof" path="res://imagenes/BackgroundMenu00.png" id="1_2owot"]
+[ext_resource type="FontFile" uid="uid://crl5bcgo6l6mb" path="res://fuentes/Gagalin-Regular.otf" id="2_6cq3m"]
+[ext_resource type="FontFile" uid="uid://cau71hgpl3dy3" path="res://fuentes/University.otf" id="3_5t3kx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d7r87"]
-texture = ExtResource("1_vdanu")
+texture = ExtResource("1_2owot")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_puob0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2owot"]
 bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.16565639, 0.16565642, 0.16565639, 0.6)
+shadow_size = 8
+shadow_offset = Vector2(0, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6cq3m"]
+bg_color = Color(0.1206748, 0.25126573, 0.5113907, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.16565639, 0.16565642, 0.16565639, 0.6)
+shadow_size = 8
+shadow_offset = Vector2(0, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5t3kx"]
+bg_color = Color(0.3397218, 0.46705186, 0.9834669, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -40,55 +61,74 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -378.0
-offset_top = -118.0
-offset_right = 37.0
-offset_bottom = 184.0
+offset_left = -364.0
+offset_top = -116.0
+offset_right = 51.0
+offset_bottom = 186.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="btnJugar" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6cq3m")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_puob0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2owot")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6cq3m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5t3kx")
 text = "Jugar"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="btnOpciones" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6cq3m")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_puob0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2owot")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6cq3m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5t3kx")
 text = "Opciones"
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="btnSalir" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6cq3m")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_puob0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2owot")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6cq3m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5t3kx")
 text = "Salir
 "
 
-[node name="Label" type="Label" parent="."]
+[node name="lblTitulo" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -471.0
-offset_top = -279.0
-offset_right = 502.0
-offset_bottom = -199.0
+offset_left = -486.0
+offset_top = 27.0
+offset_right = 487.0
+offset_bottom = 137.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
-theme_override_constants/shadow_offset_y = 6
-theme_override_fonts/font = ExtResource("2_d7r87")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 30
+theme_override_fonts/font = ExtResource("3_5t3kx")
 theme_override_font_sizes/font_size = 80
 text = "fairplay genai"
+horizontal_alignment = 1
+
+[node name="lblVersion" type="Label" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 617.0
+offset_right = 96.0
+offset_bottom = 640.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 20
+text = "Alpha 1.0.0"

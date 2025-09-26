@@ -14,3 +14,7 @@ config/name="fpga"
 run/main_scene="uid://cqwato8424667"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://imagenes/icon.svg"
+
+[display]
+
+mouse_cursor/custom_image="uid://dmg5rqrl4023k"
