@@ -132,3 +132,19 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 9
 theme_override_font_sizes/font_size = 20
 text = "Alpha 1.0.0"
+
+[node name="btnSalir" type="Button" parent="."]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 530.0
+offset_right = 534.0
+offset_bottom = 599.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6cq3m")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_2owot")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6cq3m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5t3kx")
+text = "Créditos
+"
