@@ -173,6 +173,11 @@ bus = &"Musica"
 stream = ExtResource("6_56ah5")
 bus = &"SFX"
 
+[node name="TextureRectMouse" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="VBoxContainer/btnJugar" to="." method="_on_btn_jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/btnOpciones" to="." method="_on_btn_opciones_pressed"]
 [connection signal="pressed" from="VBoxContainer/btnSalir" to="." method="_on_btn_salir_pressed"]

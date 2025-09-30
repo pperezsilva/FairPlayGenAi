@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr3p80jtrykjr"]
+
+[ext_resource type="Script" uid="uid://dbol8aqvc68ji" path="res://scripts/cursor.gd" id="1_awlmt"]
+
+[node name="Cursor" type="CanvasLayer"]
+script = ExtResource("1_awlmt")
+
+[node name="TextureRectMouse" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -117.0
+offset_right = -152.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

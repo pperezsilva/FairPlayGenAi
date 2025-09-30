@@ -2,11 +2,9 @@ extends Control
 @onready var musica: AudioStreamPlayer = $sndMenu
 @onready var click: AudioStreamPlayer = $sndClick
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_menu()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -17,7 +15,7 @@ func _on_btn_jugar_pressed() -> void:
 	print("Comienza el juego")
 	click.play(0.4)
 	await get_tree().create_timer(0.2).timeout # Esperar a reproducir sonido antes de ejecutar acción
-
+	get_tree().change_scene_to_file("res://escenas/Nivel.tscn")
 
 func _on_btn_opciones_pressed() -> void:
 	print("Opciones seleccionado")
