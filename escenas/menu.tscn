@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqwato8424667"]
+[gd_scene load_steps=13 format=3 uid="uid://cqwato8424667"]
 
 [ext_resource type="Texture2D" uid="uid://cai6t48xppxof" path="res://imagenes/BackgroundMenu00.png" id="1_2owot"]
 [ext_resource type="Script" uid="uid://s5xktivqpn4" path="res://scripts/menu.gd" id="1_6cq3m"]
 [ext_resource type="FontFile" uid="uid://crl5bcgo6l6mb" path="res://fuentes/Gagalin-Regular.otf" id="2_6cq3m"]
 [ext_resource type="FontFile" uid="uid://cau71hgpl3dy3" path="res://fuentes/University.otf" id="3_5t3kx"]
+[ext_resource type="AudioStream" uid="uid://dtj6cikuit1rf" path="res://sonidos/musica/sndMenu.wav" id="5_5t3kx"]
+[ext_resource type="AudioStream" uid="uid://cjfix01450ht4" path="res://sonidos/sfx/sndClick.wav" id="6_56ah5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d7r87"]
 texture = ExtResource("1_2owot")
@@ -162,6 +164,19 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 9
 theme_override_font_sizes/font_size = 20
 text = "Alpha 1.0.0"
+
+[node name="sndMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5t3kx")
+bus = &"Musica"
+
+[node name="sndClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_56ah5")
+bus = &"SFX"
+
+[node name="TextureRectMouse" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="VBoxContainer/btnJugar" to="." method="_on_btn_jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/btnOpciones" to="." method="_on_btn_opciones_pressed"]
