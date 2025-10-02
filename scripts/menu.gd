@@ -36,7 +36,7 @@ func _on_btn_creditos_pressed() -> void:
 
 
 # --- Música del nivel ---
-var musicaMenu = preload("res://sonidos/musica/sndMenu.wav")
+var musicaMenu = preload("res://sonidos/musica/menuMusic.wav")
 # Función para reproducir la música
 func _menu() -> void:
 	musica.stream = musicaMenu
