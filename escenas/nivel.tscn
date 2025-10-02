@@ -22,9 +22,9 @@ texture = ExtResource("2_ul41a")
 
 [node name="Reloj" parent="." instance=ExtResource("2_xkxn8")]
 layout_mode = 0
-hora_inicio = 9
-minuto_inicio = 30
+hora_inicio = 12
 am_inicio = false
 hora_fin = 10
-minutos_por_tick = 30
-segundos_por_tick = 1.0
+am_fin = false
+minutos_por_tick = 10
+segundos_por_tick = 3.0
