@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://pvm6hb4e1f6l"]
+[gd_scene load_steps=5 format=3 uid="uid://pvm6hb4e1f6l"]
 
+[ext_resource type="Script" uid="uid://c4nomi2i1qqi5" path="res://scripts/nivel.gd" id="1_rmw23"]
 [ext_resource type="Texture2D" uid="uid://beusa6lgul7dl" path="res://imagenes/bgNivel.png" id="2_ul41a"]
 [ext_resource type="PackedScene" uid="uid://derolybto7u3m" path="res://escenas/reloj.tscn" id="2_xkxn8"]
+[ext_resource type="AudioStream" uid="uid://v0qjhoak2wh2" path="res://sonidos/musica/studyTime.wav" id="3_xkxn8"]
 
 [node name="Nivel" type="Control"]
 layout_mode = 3
@@ -10,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rmw23")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -28,3 +31,6 @@ hora_fin = 10
 am_fin = false
 minutos_por_tick = 10
 segundos_por_tick = 3.0
+
+[node name="studyTime" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xkxn8")

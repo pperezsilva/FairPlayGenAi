@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://s5xktivqpn4" path="res://scripts/menu.gd" id="1_6cq3m"]
 [ext_resource type="FontFile" uid="uid://crl5bcgo6l6mb" path="res://fuentes/Gagalin-Regular.otf" id="2_6cq3m"]
 [ext_resource type="FontFile" uid="uid://cau71hgpl3dy3" path="res://fuentes/University.otf" id="3_5t3kx"]
-[ext_resource type="AudioStream" uid="uid://dtj6cikuit1rf" path="res://sonidos/musica/sndMenu.wav" id="5_5t3kx"]
+[ext_resource type="AudioStream" uid="uid://oaqm4128daps" path="res://sonidos/musica/menuMusic.wav" id="5_56ah5"]
 [ext_resource type="AudioStream" uid="uid://cjfix01450ht4" path="res://sonidos/sfx/sndClick.wav" id="6_56ah5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d7r87"]
@@ -178,7 +178,7 @@ theme_override_font_sizes/font_size = 30
 text = "Alpha 1.0.0"
 
 [node name="sndMenu" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_5t3kx")
+stream = ExtResource("5_56ah5")
 bus = &"Musica"
 
 [node name="sndClick" type="AudioStreamPlayer" parent="."]
