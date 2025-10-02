@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://derolybto7u3m"]
+
+[ext_resource type="Script" uid="uid://l4reut65ve38" path="res://scripts/reloj.gd" id="1_bjfri"]
+[ext_resource type="FontFile" uid="uid://ccpaegydw1w7f" path="res://fuentes/DS-DIGIB.ttf" id="2_6hnnd"]
+
+[node name="Reloj" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_bjfri")
+
+[node name="RelojLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_6hnnd")
+theme_override_font_sizes/font_size = 36
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
