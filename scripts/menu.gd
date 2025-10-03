@@ -10,7 +10,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_btn_jugar_pressed() -> void:
 	print("Comienza el juego")
 	click.play(0.4)

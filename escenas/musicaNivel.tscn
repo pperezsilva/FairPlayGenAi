@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf8s6rpn0p4ci"]
+
+[ext_resource type="Script" uid="uid://bdbakbhgnqh5j" path="res://scripts/musicaNivel.gd" id="1_2fm3u"]
+[ext_resource type="AudioStream" uid="uid://bnsh15utnrvoq" path="res://sonidos/musica/studyTime.ogg" id="2_n1k6a"]
+[ext_resource type="AudioStream" uid="uid://iqotjchup2ri" path="res://sonidos/musica/stressTime.ogg" id="3_qxv2g"]
+
+[node name="MusicaNivel" type="Node"]
+script = ExtResource("1_2fm3u")
+
+[node name="sndMusica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_n1k6a")
+bus = &"Musica"
+parameters/looping = false
+
+[node name="sndAlerta" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qxv2g")
+bus = &"Musica"
+parameters/looping = false
