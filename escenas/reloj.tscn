@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://derolybto7u3m"]
+[gd_scene load_steps=4 format=3 uid="uid://derolybto7u3m"]
 
 [ext_resource type="Script" uid="uid://l4reut65ve38" path="res://scripts/reloj.gd" id="1_bjfri"]
 [ext_resource type="FontFile" uid="uid://ccpaegydw1w7f" path="res://fuentes/DS-DIGIB.ttf" id="2_6hnnd"]
+[ext_resource type="AudioStream" uid="uid://cd01l751x8rog" path="res://sonidos/musica/sndTick.wav" id="3_6hnnd"]
 
 [node name="Reloj" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_bjfri")
+am_fin = false
+minutos_por_tick = 10
+segundos_por_tick = 3.0
+ticks_por_sonido = 6
+horas_alerta = 1
 
 [node name="RelojLabel" type="Label" parent="."]
 layout_mode = 0
@@ -16,5 +22,9 @@ theme_override_fonts/font = ExtResource("2_6hnnd")
 theme_override_font_sizes/font_size = 36
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="TickPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6hnnd")
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

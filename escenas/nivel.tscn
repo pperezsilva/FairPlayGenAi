@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://pvm6hb4e1f6l"]
+[gd_scene load_steps=7 format=3 uid="uid://pvm6hb4e1f6l"]
 
 [ext_resource type="Script" uid="uid://c4nomi2i1qqi5" path="res://scripts/nivel.gd" id="1_rmw23"]
 [ext_resource type="Texture2D" uid="uid://beusa6lgul7dl" path="res://imagenes/bgNivel.png" id="2_ul41a"]
 [ext_resource type="PackedScene" uid="uid://derolybto7u3m" path="res://escenas/reloj.tscn" id="2_xkxn8"]
 [ext_resource type="AudioStream" uid="uid://v0qjhoak2wh2" path="res://sonidos/musica/studyTime.wav" id="3_xkxn8"]
+[ext_resource type="PackedScene" uid="uid://bf8s6rpn0p4ci" path="res://escenas/musicaNivel.tscn" id="5_wddsb"]
+[ext_resource type="PackedScene" uid="uid://pgis8iaqgulj" path="res://escenas/menu_pausa.tscn" id="6_w5orq"]
 
 [node name="Nivel" type="Control"]
 layout_mode = 3
@@ -27,10 +29,13 @@ texture = ExtResource("2_ul41a")
 layout_mode = 0
 hora_inicio = 12
 am_inicio = false
-hora_fin = 10
-am_fin = false
-minutos_por_tick = 10
-segundos_por_tick = 3.0
+hora_fin = 1
 
 [node name="studyTime" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_xkxn8")
+
+[node name="MusicaNivel" parent="." instance=ExtResource("5_wddsb")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="menuPausa" parent="CanvasLayer" instance=ExtResource("6_w5orq")]
