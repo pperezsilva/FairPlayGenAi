@@ -1,0 +1,137 @@
+[gd_scene load_steps=13 format=3 uid="uid://pgis8iaqgulj"]
+
+[ext_resource type="Texture2D" uid="uid://cg3kk62araxxh" path="res://imagenes/human.png" id="1_b8d1t"]
+[ext_resource type="Script" uid="uid://72elibq1ggn1" path="res://scripts/menu_pausa.gd" id="1_pvenc"]
+[ext_resource type="Shader" uid="uid://df8lx5c0f8g3h" path="res://scripts/menu_pausa.gdshader" id="1_uabni"]
+[ext_resource type="Texture2D" uid="uid://ccf45yybp0sd3" path="res://imagenes/humanGray.png" id="2_d8q0v"]
+[ext_resource type="Texture2D" uid="uid://pakpxiktu5vg" path="res://imagenes/Enviar.png" id="2_tuklk"]
+[ext_resource type="Texture2D" uid="uid://ki4utfky1q23" path="res://imagenes/ia.png" id="3_o72er"]
+[ext_resource type="Texture2D" uid="uid://bsrpptu03w5dc" path="res://imagenes/EnviarGray.png" id="4_uabni"]
+[ext_resource type="Texture2D" uid="uid://w1kx7q0dqdrp" path="res://imagenes/iaGray.png" id="6_d8q0v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pvenc"]
+shader = ExtResource("1_uabni")
+shader_parameter/lod = 0.0
+
+[sub_resource type="Animation" id="Animation_pvenc"]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.800000038]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uabni"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0000000475, 0.800000038]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x31go"]
+_data = {
+&"RESET": SubResource("Animation_pvenc"),
+&"blur": SubResource("Animation_uabni")
+}
+
+[node name="menuPausa" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pvenc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_pvenc")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 147.0
+offset_bottom = -175.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="TextureButtonExit" type="TextureButton" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_b8d1t")
+texture_hover = ExtResource("2_d8q0v")
+stretch_mode = 5
+
+[node name="TextureButtonPlay" type="TextureButton" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_tuklk")
+texture_hover = ExtResource("4_uabni")
+stretch_mode = 5
+
+[node name="TextureButtonRestart" type="TextureButton" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_o72er")
+texture_hover = ExtResource("6_d8q0v")
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_x31go")
+}
+
+[connection signal="pressed" from="PanelContainer/HBoxContainer/TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/TextureButtonPlay" to="." method="_on_texture_button_play_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/TextureButtonRestart" to="." method="_on_texture_button_restart_pressed"]
