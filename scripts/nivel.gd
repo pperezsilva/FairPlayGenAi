@@ -21,3 +21,7 @@ func _process(delta: float) -> void:
 # Función para repetir la música
 #func _on_music_finished():
 #	musica.play()
+
+
+func _on_texture_button_pause_pressed() -> void:
+	$CanvasLayer/menuPausa.pause()

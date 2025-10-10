@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://pvm6hb4e1f6l"]
+[gd_scene load_steps=9 format=3 uid="uid://pvm6hb4e1f6l"]
 
 [ext_resource type="Script" uid="uid://c4nomi2i1qqi5" path="res://scripts/nivel.gd" id="1_rmw23"]
 [ext_resource type="Texture2D" uid="uid://beusa6lgul7dl" path="res://imagenes/bgNivel.png" id="2_ul41a"]
@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://v0qjhoak2wh2" path="res://sonidos/musica/studyTime.wav" id="3_xkxn8"]
 [ext_resource type="PackedScene" uid="uid://bf8s6rpn0p4ci" path="res://escenas/musicaNivel.tscn" id="5_wddsb"]
 [ext_resource type="PackedScene" uid="uid://pgis8iaqgulj" path="res://escenas/menu_pausa.tscn" id="6_w5orq"]
+[ext_resource type="Texture2D" uid="uid://doionhen65x4u" path="res://imagenes/btnPausa.png" id="7_6uhjk"]
+[ext_resource type="Texture2D" uid="uid://7w3kls04y3lq" path="res://imagenes/btnPausaGris.png" id="8_upgkb"]
 
 [node name="Nivel" type="Control"]
 layout_mode = 3
@@ -39,3 +41,23 @@ stream = ExtResource("3_xkxn8")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="menuPausa" parent="CanvasLayer" instance=ExtResource("6_w5orq")]
+
+[node name="TextureButtonPause" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.95
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.05
+offset_left = -36.860107
+offset_top = -19.580036
+offset_right = 326.1399
+offset_bottom = 179.41995
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("7_6uhjk")
+texture_hover = ExtResource("8_upgkb")
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureButtonPause" to="." method="_on_texture_button_pause_pressed"]
