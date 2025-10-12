@@ -1,13 +1,14 @@
 extends Control
 @onready var musica: AudioStreamPlayer = $sndMenu
 @onready var click: AudioStreamPlayer = $sndClick
+@onready var confirmar_salir = $ConfirmacionSalir
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_menu()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+# Reemplaza _delta por delta si colocas codigo en process
+func _process(_delta: float) -> void:
 	pass
 
 func _on_btn_jugar_pressed() -> void:
@@ -24,8 +25,7 @@ func _on_btn_opciones_pressed() -> void:
 
 func _on_btn_salir_pressed() -> void:
 	click.play(0.4)
-	await get_tree().create_timer(0.2).timeout# Esperar a reproducir sonido antes de ejecutar acción
-	get_tree().quit()
+	confirmar_salir.show()
 
 
 func _on_btn_creditos_pressed() -> void:

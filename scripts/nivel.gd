@@ -1,4 +1,5 @@
 extends Control
+@onready var click: AudioStreamPlayer = $sndClick
 #@onready var musica: AudioStreamPlayer = $studyTime
 
 # Called when the node enters the scene tree for the first time.
@@ -7,8 +8,8 @@ func _ready() -> void:
 	#_music()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+# Reemplaza _delta por delta si añades codigo al _process
+func _process(_delta: float) -> void:
 	pass
 
 # --- Música del nivel ---
@@ -24,4 +25,7 @@ func _process(delta: float) -> void:
 
 
 func _on_texture_button_pause_pressed() -> void:
+	print("Boton de Pausa Presionado")
+	click.play(0.4)
+	await get_tree().create_timer(0.2).timeout
 	$CanvasLayer/menuPausa.pause()

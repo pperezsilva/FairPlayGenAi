@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://fanym5lkreub"]
+
+[ext_resource type="Script" uid="uid://ddwwoo1nkdbwm" path="res://scripts/mensaje_confirmacion.gd" id="1_blbmp"]
+[ext_resource type="AudioStream" uid="uid://cjfix01450ht4" path="res://sonidos/sfx/sndClick.wav" id="2_sh4me"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_blbmp"]
+bg_color = Color(0.18104856, 0.18104856, 0.18104853, 1)
+
+[node name="MensajeConfirmacion" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_blbmp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.627451)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -267.5
+offset_top = -102.0
+offset_right = 267.5
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blbmp")
+
+[node name="LabelMensaje" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.286
+anchor_top = 0.132
+anchor_right = 0.71400005
+anchor_bottom = 0.36800003
+offset_left = -0.010009766
+offset_top = -0.07999992
+offset_right = 0.009979248
+offset_bottom = 0.0799942
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "¿Salir al Menu?"
+
+[node name="ButtonAceptar" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.11000001
+anchor_top = 0.455
+anchor_right = 0.44300002
+anchor_bottom = 0.68
+offset_left = 0.14999771
+offset_top = -0.10500336
+offset_right = -0.005004883
+offset_bottom = -0.08000183
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Aceptar"
+
+[node name="ButtonCancelar" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.551
+anchor_top = 0.46300003
+anchor_right = 0.88500005
+anchor_bottom = 0.688
+offset_left = 0.21499634
+offset_top = 0.04698944
+offset_right = -0.14202881
+offset_bottom = 0.07199097
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Cancelar"
+
+[node name="sndClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_sh4me")
+bus = &"SFX"
+
+[connection signal="pressed" from="Panel/ButtonAceptar" to="." method="_on_button_aceptar_pressed"]
+[connection signal="pressed" from="Panel/ButtonCancelar" to="." method="_on_button_cancelar_pressed"]

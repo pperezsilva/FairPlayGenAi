@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://pgis8iaqgulj"]
+[gd_scene load_steps=16 format=3 uid="uid://pgis8iaqgulj"]
 
 [ext_resource type="Texture2D" uid="uid://cg3kk62araxxh" path="res://imagenes/human.png" id="1_b8d1t"]
 [ext_resource type="Script" uid="uid://72elibq1ggn1" path="res://scripts/menu_pausa.gd" id="1_pvenc"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://ki4utfky1q23" path="res://imagenes/ia.png" id="3_o72er"]
 [ext_resource type="Texture2D" uid="uid://bsrpptu03w5dc" path="res://imagenes/EnviarGray.png" id="4_uabni"]
 [ext_resource type="Texture2D" uid="uid://w1kx7q0dqdrp" path="res://imagenes/iaGray.png" id="6_d8q0v"]
+[ext_resource type="PackedScene" uid="uid://fanym5lkreub" path="res://escenas/mensajeConfirmacion.tscn" id="9_x31go"]
+[ext_resource type="PackedScene" uid="uid://timpyti7b1ib" path="res://escenas/ConfirmacionReiniciar.tscn" id="10_2jxr5"]
+[ext_resource type="AudioStream" uid="uid://cjfix01450ht4" path="res://sonidos/sfx/sndClick.wav" id="11_mcbxj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pvenc"]
 shader = ExtResource("1_uabni")
@@ -131,6 +134,18 @@ stretch_mode = 5
 libraries = {
 &"": SubResource("AnimationLibrary_x31go")
 }
+
+[node name="MensajeConfirmacion" parent="." instance=ExtResource("9_x31go")]
+visible = false
+layout_mode = 1
+
+[node name="ConfirmacionReiniciar" parent="." instance=ExtResource("10_2jxr5")]
+visible = false
+layout_mode = 1
+
+[node name="sndClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_mcbxj")
+bus = &"SFX"
 
 [connection signal="pressed" from="PanelContainer/HBoxContainer/TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/TextureButtonPlay" to="." method="_on_texture_button_play_pressed"]
