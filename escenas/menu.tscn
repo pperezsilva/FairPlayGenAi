@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cqwato8424667"]
+[gd_scene load_steps=14 format=3 uid="uid://cqwato8424667"]
 
 [ext_resource type="Texture2D" uid="uid://cai6t48xppxof" path="res://imagenes/BackgroundMenu00.png" id="1_2owot"]
 [ext_resource type="Script" uid="uid://s5xktivqpn4" path="res://scripts/menu.gd" id="1_6cq3m"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cau71hgpl3dy3" path="res://fuentes/University.otf" id="3_5t3kx"]
 [ext_resource type="AudioStream" uid="uid://oaqm4128daps" path="res://sonidos/musica/menuMusic.wav" id="5_56ah5"]
 [ext_resource type="AudioStream" uid="uid://cjfix01450ht4" path="res://sonidos/sfx/sndClick.wav" id="6_56ah5"]
+[ext_resource type="PackedScene" uid="uid://ck2445lemtnnl" path="res://escenas/ConfirmacionSalir.tscn" id="7_xqndx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d7r87"]
 texture = ExtResource("1_2owot")
@@ -190,6 +191,10 @@ bus = &"SFX"
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="ConfirmacionSalir" parent="." instance=ExtResource("7_xqndx")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="VBoxContainer/btnJugar" to="." method="_on_btn_jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/btnOpciones" to="." method="_on_btn_opciones_pressed"]

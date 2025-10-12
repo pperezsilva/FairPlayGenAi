@@ -3,6 +3,7 @@ extends Node
 @onready var musica_tranquila: AudioStreamPlayer = $sndMusica
 @onready var musica_tension: AudioStreamPlayer = $sndAlerta
 
+
 var estado_anterior: int = -1
 
 func _ready() -> void:

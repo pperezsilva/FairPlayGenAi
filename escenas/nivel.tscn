@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://pvm6hb4e1f6l"]
+[gd_scene load_steps=10 format=3 uid="uid://pvm6hb4e1f6l"]
 
 [ext_resource type="Script" uid="uid://c4nomi2i1qqi5" path="res://scripts/nivel.gd" id="1_rmw23"]
 [ext_resource type="Texture2D" uid="uid://beusa6lgul7dl" path="res://imagenes/bgNivel.png" id="2_ul41a"]
 [ext_resource type="PackedScene" uid="uid://derolybto7u3m" path="res://escenas/reloj.tscn" id="2_xkxn8"]
 [ext_resource type="AudioStream" uid="uid://v0qjhoak2wh2" path="res://sonidos/musica/studyTime.wav" id="3_xkxn8"]
+[ext_resource type="AudioStream" uid="uid://cjfix01450ht4" path="res://sonidos/sfx/sndClick.wav" id="5_cr4x3"]
 [ext_resource type="PackedScene" uid="uid://bf8s6rpn0p4ci" path="res://escenas/musicaNivel.tscn" id="5_wddsb"]
 [ext_resource type="PackedScene" uid="uid://pgis8iaqgulj" path="res://escenas/menu_pausa.tscn" id="6_w5orq"]
 [ext_resource type="Texture2D" uid="uid://doionhen65x4u" path="res://imagenes/btnPausa.png" id="7_6uhjk"]
@@ -36,11 +37,17 @@ hora_fin = 1
 [node name="studyTime" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_xkxn8")
 
+[node name="sndClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_cr4x3")
+bus = &"SFX"
+
 [node name="MusicaNivel" parent="." instance=ExtResource("5_wddsb")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="menuPausa" parent="CanvasLayer" instance=ExtResource("6_w5orq")]
+offset_left = -1.0
+offset_right = -1.0
 
 [node name="TextureButtonPause" type="TextureButton" parent="."]
 layout_mode = 1
@@ -49,10 +56,10 @@ anchor_left = 0.95
 anchor_top = 0.05
 anchor_right = 0.95
 anchor_bottom = 0.05
-offset_left = -36.860107
-offset_top = -19.580036
-offset_right = 326.1399
-offset_bottom = 179.41995
+offset_left = -32.0
+offset_top = -19.0
+offset_right = 331.0
+offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.2, 0.2)
