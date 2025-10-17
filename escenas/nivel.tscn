@@ -1,14 +1,197 @@
-[gd_scene load_steps=10 format=3 uid="uid://pvm6hb4e1f6l"]
+[gd_scene load_steps=21 format=3 uid="uid://pvm6hb4e1f6l"]
 
 [ext_resource type="Script" uid="uid://c4nomi2i1qqi5" path="res://scripts/nivel.gd" id="1_rmw23"]
 [ext_resource type="Texture2D" uid="uid://beusa6lgul7dl" path="res://imagenes/bgNivel.png" id="2_ul41a"]
 [ext_resource type="PackedScene" uid="uid://derolybto7u3m" path="res://escenas/reloj.tscn" id="2_xkxn8"]
+[ext_resource type="Texture2D" uid="uid://bfsp52d6l7ku8" path="res://imagenes/entregable.png" id="3_6hejw"]
 [ext_resource type="AudioStream" uid="uid://v0qjhoak2wh2" path="res://sonidos/musica/studyTime.wav" id="3_xkxn8"]
 [ext_resource type="AudioStream" uid="uid://cjfix01450ht4" path="res://sonidos/sfx/sndClick.wav" id="5_cr4x3"]
 [ext_resource type="PackedScene" uid="uid://bf8s6rpn0p4ci" path="res://escenas/musicaNivel.tscn" id="5_wddsb"]
 [ext_resource type="PackedScene" uid="uid://pgis8iaqgulj" path="res://escenas/menu_pausa.tscn" id="6_w5orq"]
 [ext_resource type="Texture2D" uid="uid://doionhen65x4u" path="res://imagenes/btnPausa.png" id="7_6uhjk"]
 [ext_resource type="Texture2D" uid="uid://7w3kls04y3lq" path="res://imagenes/btnPausaGris.png" id="8_upgkb"]
+[ext_resource type="Texture2D" uid="uid://bdak6e2wlxlad" path="res://imagenes/LupaIcon.png" id="11_ro3c3"]
+[ext_resource type="Texture2D" uid="uid://bhu6cpiefeahg" path="res://imagenes/lineaScan.png" id="12_t4jkt"]
+
+[sub_resource type="Animation" id="Animation_t4jkt"]
+resource_name = "scaner"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LineaScan:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(437, 252), Vector2(855, 251.99998)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LineaScan2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.47),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(437, 376), Vector2(852.3, 376)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LineaScan3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.48),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(437, 502), Vector2(844.4, 502)]
+}
+
+[sub_resource type="Animation" id="Animation_fpuh1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LineaScan:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(437, 252)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LineaScan2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(437, 376)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LineaScan3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(437, 502)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8p663"]
+_data = {
+&"RESET": SubResource("Animation_fpuh1"),
+&"scaner": SubResource("Animation_t4jkt")
+}
+
+[sub_resource type="Animation" id="Animation_8p663"]
+resource_name = "ScanerButton"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Buttontext:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 0.96666664),
+"transitions": PackedFloat32Array(1, 1, 1.035265),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.5137255), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y727t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Buttontext:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ButtonText2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ButtonText3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_beshd"]
+resource_name = "ScanerButton2"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ButtonText2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.5882353)]
+}
+
+[sub_resource type="Animation" id="Animation_hfcx1"]
+resource_name = "ScannerButton3"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ButtonText3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.5882353)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_beshd"]
+_data = {
+&"RESET": SubResource("Animation_y727t"),
+&"ScanerButton": SubResource("Animation_8p663"),
+&"ScanerButton2": SubResource("Animation_beshd"),
+&"ScannerButton3": SubResource("Animation_hfcx1")
+}
 
 [node name="Nivel" type="Control"]
 layout_mode = 3
@@ -28,6 +211,21 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ul41a")
 
+[node name="Entregable" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.75
+offset_top = -317.414
+offset_right = 243.75
+offset_bottom = 317.414
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_6hejw")
+
 [node name="Reloj" parent="." instance=ExtResource("2_xkxn8")]
 layout_mode = 0
 hora_inicio = 12
@@ -46,6 +244,7 @@ bus = &"SFX"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="menuPausa" parent="CanvasLayer" instance=ExtResource("6_w5orq")]
+visible = false
 offset_left = -1.0
 offset_right = -1.0
 
@@ -67,4 +266,94 @@ texture_normal = ExtResource("7_6uhjk")
 texture_hover = ExtResource("8_upgkb")
 stretch_mode = 0
 
+[node name="Buttontext" type="Button" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 200.0
+offset_right = 837.0
+offset_bottom = 300.0
+theme_override_font_sizes/font_size = 15
+text = "placehorder"
+alignment = 0
+autowrap_mode = 3
+
+[node name="Buttonchange" type="Button" parent="."]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 205.0
+offset_right = 392.0
+offset_bottom = 295.9804
+icon = ExtResource("11_ro3c3")
+expand_icon = true
+
+[node name="ButtonText2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 325.0
+offset_right = 837.0
+offset_bottom = 425.0
+theme_override_font_sizes/font_size = 15
+alignment = 0
+autowrap_mode = 3
+
+[node name="Buttonchange2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 332.0
+offset_right = 392.0
+offset_bottom = 422.9804
+icon = ExtResource("11_ro3c3")
+expand_icon = true
+
+[node name="ButtonText3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 450.0
+offset_right = 837.0
+offset_bottom = 558.0
+theme_override_font_sizes/font_size = 15
+alignment = 0
+autowrap_mode = 3
+
+[node name="Buttonchange3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 460.0
+offset_right = 396.0
+offset_bottom = 550.9804
+icon = ExtResource("11_ro3c3")
+expand_icon = true
+
+[node name="LineaScan" type="Sprite2D" parent="."]
+position = Vector2(437, 252)
+scale = Vector2(1, 1.4696968)
+texture = ExtResource("12_t4jkt")
+
+[node name="LineaScan2" type="Sprite2D" parent="."]
+position = Vector2(437, 376)
+scale = Vector2(1, 1.4696968)
+texture = ExtResource("12_t4jkt")
+
+[node name="LineaScan3" type="Sprite2D" parent="."]
+position = Vector2(437, 502)
+scale = Vector2(1, 1.4696968)
+texture = ExtResource("12_t4jkt")
+
+[node name="AnimationPlayerScaner" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8p663")
+}
+
+[node name="AnimationScanerButton" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_beshd")
+}
+speed_scale = 2.0
+
 [connection signal="pressed" from="TextureButtonPause" to="." method="_on_texture_button_pause_pressed"]
+[connection signal="pressed" from="Buttontext" to="." method="_on_buttontext_pressed"]
+[connection signal="pressed" from="Buttonchange" to="." method="_on_buttonchange_pressed"]
+[connection signal="pressed" from="ButtonText2" to="." method="_on_button_text_2_pressed"]
+[connection signal="pressed" from="Buttonchange2" to="." method="_on_buttonchange_2_pressed"]
+[connection signal="pressed" from="ButtonText3" to="." method="_on_button_text_3_pressed"]
+[connection signal="pressed" from="Buttonchange3" to="." method="_on_buttonchange_3_pressed"]
