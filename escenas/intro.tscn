@@ -1,0 +1,192 @@
+[gd_scene load_steps=12 format=3 uid="uid://dh08lpmdg24vp"]
+
+[ext_resource type="Script" uid="uid://jdhilub63ca2" path="res://scripts/intro.gd" id="1_8am0j"]
+[ext_resource type="Texture2D" uid="uid://q7jo3ha8gdjy" path="res://imagenes/Intro1.jpg" id="1_xwtud"]
+[ext_resource type="Texture2D" uid="uid://cipp710epsd06" path="res://imagenes/EnviarMini.png" id="2_8am0j"]
+[ext_resource type="Texture2D" uid="uid://5j4xag8q2nbw" path="res://imagenes/intro2.jpg" id="2_jhcfx"]
+[ext_resource type="Texture2D" uid="uid://omdyl3nlcpo6" path="res://imagenes/EnviarMiniGray.png" id="3_11psi"]
+[ext_resource type="Texture2D" uid="uid://n3ltct1mvxy4" path="res://imagenes/Intro3.jpg" id="3_lnvo3"]
+[ext_resource type="AudioStream" uid="uid://dtj6cikuit1rf" path="res://sonidos/musica/sndMenu.wav" id="7_11psi"]
+
+[sub_resource type="Animation" id="Animation_jhcfx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intro1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(669.00006, 361.00003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Intro2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1669, 361)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Intro3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2669, 361)]
+}
+
+[sub_resource type="Animation" id="Animation_xwtud"]
+resource_name = "paso1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intro1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(669.00006, 361.00003), Vector2(-400, 361)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Intro2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1669, 361), Vector2(669, 361)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Intro3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2669, 361), Vector2(1669, 361)]
+}
+
+[sub_resource type="Animation" id="Animation_8am0j"]
+resource_name = "paso2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intro1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-400, 361), Vector2(-1400, 361)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Intro2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(669, 361), Vector2(-400, 361)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Intro3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1669, 361), Vector2(669, 361)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lnvo3"]
+_data = {
+&"RESET": SubResource("Animation_jhcfx"),
+&"paso1": SubResource("Animation_xwtud"),
+&"paso2": SubResource("Animation_8am0j")
+}
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8am0j")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -165.0
+offset_top = -148.0
+offset_right = -46.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("2_8am0j")
+texture_hover = ExtResource("3_11psi")
+
+[node name="Intro1" type="Sprite2D" parent="."]
+position = Vector2(669.00006, 361.00003)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_xwtud")
+
+[node name="Intro2" type="Sprite2D" parent="."]
+position = Vector2(1669, 361)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_jhcfx")
+
+[node name="Intro3" type="Sprite2D" parent="."]
+position = Vector2(2669, 361)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_lnvo3")
+
+[node name="Cinematica1" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lnvo3")
+}
+
+[node name="MusicaCinematica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_11psi")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="animation_finished" from="Cinematica1" to="." method="_on_cinematica_1_animation_finished"]
