@@ -1,0 +1,291 @@
+[gd_scene load_steps=17 format=3 uid="uid://cby6sg4fvukrs"]
+
+[ext_resource type="Script" uid="uid://bowvm52g28x5u" path="res://scripts/gena.gd" id="1_m6104"]
+[ext_resource type="Texture2D" uid="uid://cdl8c3mwrqu4i" path="res://imagenes/GenaVeryHappy.png" id="1_o6lgn"]
+[ext_resource type="Texture2D" uid="uid://ju0pploeh8i2" path="res://imagenes/GloboTexto2.png" id="2_eevyr"]
+[ext_resource type="Texture2D" uid="uid://buqnmr5i4wi5w" path="res://imagenes/GenaCheckList.png" id="2_m6104"]
+[ext_resource type="FontFile" uid="uid://crl5bcgo6l6mb" path="res://fuentes/Gagalin-Regular.otf" id="3_vi7vd"]
+[ext_resource type="Texture2D" uid="uid://chkryr80iokvj" path="res://imagenes/GenaFlying.png" id="4_0hla7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eevyr"]
+bg_color = Color(0.37275803, 0.7053422, 0.99999994, 1)
+border_width_bottom = 10
+border_color = Color(0.5898561, 0.8391168, 0.9742529, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vi7vd"]
+bg_color = Color(1.92523e-07, 0.5443279, 0.8886567, 1)
+border_width_bottom = 10
+border_color = Color(0.20588976, 0.60203546, 0.7809287, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Animation" id="Animation_m6104"]
+resource_name = "Flying up"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gena:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(210.00003, 851.99994), Vector2(371, 470.00003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gena:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.3333334, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5556178, 0.55561787), Vector2(0.8, 0.8), Vector2(0.9, 0.9), Vector2(0.7, 0.7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Gena:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("1_o6lgn"), ExtResource("2_m6104")]
+}
+
+[sub_resource type="Animation" id="Animation_0hla7"]
+resource_name = "changetoChecklist"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gena:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(371, 470.00003), Vector2(371, 480)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gena:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_m6104")]
+}
+
+[sub_resource type="Animation" id="Animation_eevyr"]
+resource_name = "FliyingAway"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gena:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5556178, 0.55561787), Vector2(0.6, 0.6), Vector2(0.556, 0.556)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gena:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_m6104"), ExtResource("4_0hla7")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Gena:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(371, 470.00003), Vector2(371, 470.00003), Vector2(391, 437), Vector2(1090, -581)]
+}
+
+[sub_resource type="Animation" id="Animation_vi7vd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gena:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5556178, 0.55561787)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gena:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_m6104")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Gena:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(371, 470.00003)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0hla7"]
+_data = {
+&"ChecklistDefault": SubResource("Animation_0hla7"),
+&"Elevacion": SubResource("Animation_m6104"),
+&"FliyingAway": SubResource("Animation_eevyr"),
+&"RESET": SubResource("Animation_vi7vd")
+}
+
+[sub_resource type="Animation" id="Animation_27ifb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextBox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dwq74"]
+resource_name = "show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextBox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b3dit"]
+_data = {
+&"RESET": SubResource("Animation_27ifb"),
+&"show": SubResource("Animation_dwq74")
+}
+
+[node name="Gena" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m6104")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextBox" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(808, 269.00003)
+scale = Vector2(0.8047411, 1.3826972)
+texture = ExtResource("2_eevyr")
+
+[node name="Label" type="Label" parent="TextBox"]
+offset_left = -390.1876
+offset_top = -67.98309
+offset_right = 410.06985
+offset_bottom = 45.563103
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "HOLA, BIENVENIDO!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="TextBox"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -721.69995
+offset_top = -91.99893
+offset_right = -475.65808
+offset_bottom = -39.99893
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_vi7vd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_eevyr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vi7vd")
+text = "Continuar"
+
+[node name="Gena" type="Sprite2D" parent="."]
+position = Vector2(371, 470.00003)
+scale = Vector2(0.5556178, 0.55561787)
+texture = ExtResource("2_m6104")
+
+[node name="AnimationGena" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0hla7")
+}
+speed_scale = 1.5
+
+[node name="AnimationTextBox" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_b3dit")
+}
+
+[connection signal="pressed" from="TextBox/Button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="AnimationGena" to="." method="_on_animation_gena_animation_finished"]

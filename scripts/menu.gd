@@ -3,6 +3,7 @@ extends Control
 @onready var click: AudioStreamPlayer = $sndClick
 @onready var confirmar_salir = $ConfirmacionSalir
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_menu()
@@ -15,7 +16,8 @@ func _on_btn_jugar_pressed() -> void:
 	print("Comienza el juego")
 	click.play(0.4)
 	await get_tree().create_timer(0.2).timeout # Esperar a reproducir sonido antes de ejecutar acción
-	get_tree().change_scene_to_file("res://escenas/Nivel.tscn")
+	#get_tree().change_scene_to_file("res://escenas/Nivel.tscn")
+	get_tree().change_scene_to_file("res://escenas/intro.tscn")
 
 func _on_btn_opciones_pressed() -> void:
 	print("Opciones seleccionado")

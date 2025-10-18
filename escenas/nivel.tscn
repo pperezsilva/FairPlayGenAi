@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://pvm6hb4e1f6l"]
+[gd_scene load_steps=22 format=3 uid="uid://pvm6hb4e1f6l"]
 
 [ext_resource type="Script" uid="uid://c4nomi2i1qqi5" path="res://scripts/nivel.gd" id="1_rmw23"]
 [ext_resource type="Texture2D" uid="uid://beusa6lgul7dl" path="res://imagenes/bgNivel.png" id="2_ul41a"]
@@ -12,6 +12,46 @@
 [ext_resource type="Texture2D" uid="uid://7w3kls04y3lq" path="res://imagenes/btnPausaGris.png" id="8_upgkb"]
 [ext_resource type="Texture2D" uid="uid://bdak6e2wlxlad" path="res://imagenes/LupaIcon.png" id="11_ro3c3"]
 [ext_resource type="Texture2D" uid="uid://bhu6cpiefeahg" path="res://imagenes/lineaScan.png" id="12_t4jkt"]
+[ext_resource type="PackedScene" uid="uid://cby6sg4fvukrs" path="res://escenas/gena.tscn" id="13_fpuh1"]
+
+[sub_resource type="Animation" id="Animation_fpuh1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LineaScan:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(437, 252)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LineaScan2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(437, 376)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LineaScan3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(437, 502)]
+}
 
 [sub_resource type="Animation" id="Animation_t4jkt"]
 resource_name = "scaner"
@@ -53,65 +93,10 @@ tracks/2/keys = {
 "values": [Vector2(437, 502), Vector2(844.4, 502)]
 }
 
-[sub_resource type="Animation" id="Animation_fpuh1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LineaScan:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(437, 252)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("LineaScan2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(437, 376)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("LineaScan3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(437, 502)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8p663"]
 _data = {
 &"RESET": SubResource("Animation_fpuh1"),
 &"scaner": SubResource("Animation_t4jkt")
-}
-
-[sub_resource type="Animation" id="Animation_8p663"]
-resource_name = "ScanerButton"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Buttontext:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.53333336, 0.96666664),
-"transitions": PackedFloat32Array(1, 1, 1.035265),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.5137255), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_y727t"]
@@ -151,6 +136,22 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8p663"]
+resource_name = "ScanerButton"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Buttontext:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 0.96666664),
+"transitions": PackedFloat32Array(1, 1, 1.035265),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.5137255), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_beshd"]
@@ -349,6 +350,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_beshd")
 }
 speed_scale = 2.0
+
+[node name="Gena" parent="." instance=ExtResource("13_fpuh1")]
+layout_mode = 1
 
 [connection signal="pressed" from="TextureButtonPause" to="." method="_on_texture_button_pause_pressed"]
 [connection signal="pressed" from="Buttontext" to="." method="_on_buttontext_pressed"]
