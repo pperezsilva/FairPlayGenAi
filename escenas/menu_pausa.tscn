@@ -1,13 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://pgis8iaqgulj"]
+[gd_scene load_steps=17 format=3 uid="uid://pgis8iaqgulj"]
 
-[ext_resource type="Texture2D" uid="uid://cg3kk62araxxh" path="res://imagenes/human.png" id="1_b8d1t"]
 [ext_resource type="Script" uid="uid://72elibq1ggn1" path="res://scripts/menu_pausa.gd" id="1_pvenc"]
 [ext_resource type="Shader" uid="uid://df8lx5c0f8g3h" path="res://scripts/menu_pausa.gdshader" id="1_uabni"]
 [ext_resource type="Texture2D" uid="uid://ccf45yybp0sd3" path="res://imagenes/humanGray.png" id="2_d8q0v"]
 [ext_resource type="Texture2D" uid="uid://pakpxiktu5vg" path="res://imagenes/Enviar.png" id="2_tuklk"]
-[ext_resource type="Texture2D" uid="uid://ki4utfky1q23" path="res://imagenes/ia.png" id="3_o72er"]
+[ext_resource type="Texture2D" uid="uid://duuj7ocfmaxdx" path="res://escenas/humanWhite.png" id="3_2jxr5"]
 [ext_resource type="Texture2D" uid="uid://bsrpptu03w5dc" path="res://imagenes/EnviarGray.png" id="4_uabni"]
 [ext_resource type="Texture2D" uid="uid://w1kx7q0dqdrp" path="res://imagenes/iaGray.png" id="6_d8q0v"]
+[ext_resource type="Texture2D" uid="uid://df6odnjdwyr4b" path="res://imagenes/iaWhite.png" id="7_mcbxj"]
 [ext_resource type="PackedScene" uid="uid://fanym5lkreub" path="res://escenas/mensajeConfirmacion.tscn" id="9_x31go"]
 [ext_resource type="PackedScene" uid="uid://timpyti7b1ib" path="res://escenas/ConfirmacionReiniciar.tscn" id="10_2jxr5"]
 [ext_resource type="AudioStream" uid="uid://cjfix01450ht4" path="res://sonidos/sfx/sndClick.wav" id="11_mcbxj"]
@@ -15,6 +15,9 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pvenc"]
 shader = ExtResource("1_uabni")
 shader_parameter/lod = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcbxj"]
+bg_color = Color(0.1728327, 0.17283267, 0.17283267, 0.98039216)
 
 [sub_resource type="Animation" id="Animation_pvenc"]
 length = 0.3
@@ -106,6 +109,7 @@ offset_top = 147.0
 offset_bottom = -175.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mcbxj")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -114,7 +118,7 @@ alignment = 1
 
 [node name="TextureButtonExit" type="TextureButton" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_b8d1t")
+texture_normal = ExtResource("3_2jxr5")
 texture_hover = ExtResource("2_d8q0v")
 stretch_mode = 5
 
@@ -126,7 +130,7 @@ stretch_mode = 5
 
 [node name="TextureButtonRestart" type="TextureButton" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("3_o72er")
+texture_normal = ExtResource("7_mcbxj")
 texture_hover = ExtResource("6_d8q0v")
 stretch_mode = 5
 
