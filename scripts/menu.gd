@@ -3,6 +3,7 @@ extends Control
 @onready var click: AudioStreamPlayer = $sndClick
 @onready var confirmar_salir = $ConfirmacionSalir
 
+var mostrar_creditos := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,6 +35,8 @@ func _on_btn_creditos_pressed() -> void:
 	print("Creditos seleccionado")
 	click.play(0.4)
 	await get_tree().create_timer(0.2).timeout# Esperar a reproducir sonido antes de ejecutar acción
+	mostrar_creditos = true
+	$AnimationActivarCreditos.play("opcionesAbajo")
 
 
 # --- Música del nivel ---
@@ -46,3 +49,16 @@ func _menu() -> void:
 # Función para repetir la música
 func _on_music_finished():
 	musica.play()
+
+
+func _on_animation_activar_creditos_animation_finished(anim_name: StringName) -> void:
+	if mostrar_creditos:
+		$PanelCreditos.show()
+
+
+func _on_button_pressed() -> void:
+	mostrar_creditos = false
+	click.play(0.4)
+	await get_tree().create_timer(0.2).timeout
+	$PanelCreditos.hide()
+	$AnimationActivarCreditos.play_backwards("opcionesAbajo")
