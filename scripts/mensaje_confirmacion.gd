@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 func _on_button_aceptar_pressed() -> void:
 	click.play(0.4)
 	await get_tree().create_timer(0.2).timeout
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://escenas/menu.tscn")
 
 
