@@ -21,9 +21,11 @@ func _ready() -> void:
 	$LineaScan2.hide()
 	$LineaScan3.hide()
 	
-	$Buttontext.text = textos.pick_random()
-	$ButtonText2.text = textos2.pick_random()
-	$ButtonText3.text = textos3.pick_random()
+	#$Buttontext.text = textos.pick_random()
+	#$ButtonText2.text = textos2.pick_random()
+	#$ButtonText3.text = textos3.pick_random()
+	
+	$AnimationGenaNivel.play("flyup")
 
 
 
@@ -107,3 +109,38 @@ func _on_buttonchange_3_pressed() -> void:
 		textoNuevo = textos.pick_random()
 	$ButtonText3.text = textoNuevo
 	$Buttonchange3.hide()
+
+
+func _on_animation_gena_nivel_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "flyup":
+		$AnimationGenaNivel.play("default")
+
+
+func _on_boton_escribir_pressed() -> void:
+	$Notas/BotonEscribir.hide()
+	$Notas/BotonEscribir2.hide()
+	$Notas/BotonEscribir3.hide()
+	$Buttontext.show()
+	$Buttontext.text = global.seleccionado
+	global.seleccionado = ""
+	global.parrafos[0] = 1
+
+
+func _on_boton_escribir_2_pressed() -> void:
+	$Notas/BotonEscribir.hide()
+	$Notas/BotonEscribir2.hide()
+	$Notas/BotonEscribir3.hide()
+	$ButtonText2.show()
+	$ButtonText2.text = global.seleccionado
+	global.seleccionado = ""
+	global.parrafos[1] = 1
+
+
+func _on_boton_escribir_3_pressed() -> void:
+	$Notas/BotonEscribir.hide()
+	$Notas/BotonEscribir2.hide()
+	$Notas/BotonEscribir3.hide()
+	$ButtonText3.show()
+	$ButtonText3.text = global.seleccionado
+	global.seleccionado = ""
+	global.parrafos[2] = 1

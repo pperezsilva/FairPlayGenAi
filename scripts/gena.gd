@@ -1,7 +1,8 @@
 extends Control
 var dialogos = [
 	"Hola, Bienvenido!",
-	"¡Soy Gena!, Seré tu asistente IA"
+	"¡Soy Gena!, Seré tu asistente IA",
+	"Parece que te dejaron tu primer tarea"
 ]
 var cdialogos = 0
 
@@ -21,11 +22,11 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	if cdialogos <= 1:
+	if cdialogos <= 2:
 		$AnimationTextBox.play("show")
 		$TextBox/Label.text = dialogos[cdialogos]
 		cdialogos += 1
-	elif cdialogos >= 2:
+	elif cdialogos >= 3:
 		$TextBox.hide()
 		$AnimationGena.play("FliyingAway")
 
@@ -44,4 +45,3 @@ func _on_animation_gena_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "FliyingAway":
 		get_tree().paused = false
 		queue_free()
-	
