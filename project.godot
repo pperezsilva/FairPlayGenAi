@@ -19,6 +19,7 @@ config/icon="res://imagenes/icon.svg"
 
 Cursor="*res://escenas/cursor.tscn"
 gblVarEdoMusica="*res://scripts/gblVarEdoMusica.gd"
+global="*res://scripts/global.gd"
 
 [display]
 

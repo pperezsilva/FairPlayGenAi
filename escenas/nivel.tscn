@@ -1,18 +1,58 @@
-[gd_scene load_steps=22 format=3 uid="uid://pvm6hb4e1f6l"]
+[gd_scene load_steps=50 format=3 uid="uid://pvm6hb4e1f6l"]
 
 [ext_resource type="Script" uid="uid://c4nomi2i1qqi5" path="res://scripts/nivel.gd" id="1_rmw23"]
 [ext_resource type="Texture2D" uid="uid://beusa6lgul7dl" path="res://imagenes/bgNivel.png" id="2_ul41a"]
 [ext_resource type="PackedScene" uid="uid://derolybto7u3m" path="res://escenas/reloj.tscn" id="2_xkxn8"]
 [ext_resource type="Texture2D" uid="uid://bfsp52d6l7ku8" path="res://imagenes/entregable.png" id="3_6hejw"]
 [ext_resource type="AudioStream" uid="uid://v0qjhoak2wh2" path="res://sonidos/musica/studyTime.wav" id="3_xkxn8"]
+[ext_resource type="Texture2D" uid="uid://dxhhvit8lnx8i" path="res://imagenes/notas.png" id="5_beshd"]
 [ext_resource type="AudioStream" uid="uid://cjfix01450ht4" path="res://sonidos/sfx/sndClick.wav" id="5_cr4x3"]
 [ext_resource type="PackedScene" uid="uid://bf8s6rpn0p4ci" path="res://escenas/musicaNivel.tscn" id="5_wddsb"]
+[ext_resource type="Script" uid="uid://cktj5a110rh8w" path="res://scripts/notas.gd" id="6_hfcx1"]
 [ext_resource type="PackedScene" uid="uid://pgis8iaqgulj" path="res://escenas/menu_pausa.tscn" id="6_w5orq"]
 [ext_resource type="Texture2D" uid="uid://doionhen65x4u" path="res://imagenes/btnPausa.png" id="7_6uhjk"]
+[ext_resource type="Texture2D" uid="uid://dr0lew3av4avy" path="res://imagenes/botonTriangular.png" id="7_l34rc"]
+[ext_resource type="Texture2D" uid="uid://b0j0pgjyiyd05" path="res://imagenes/botonTriangularHover.png" id="8_5m6on"]
 [ext_resource type="Texture2D" uid="uid://7w3kls04y3lq" path="res://imagenes/btnPausaGris.png" id="8_upgkb"]
+[ext_resource type="Texture2D" uid="uid://cct47oh10culh" path="res://lapiz.png" id="9_xxmoc"]
+[ext_resource type="Texture2D" uid="uid://c7rnpb55ik14" path="res://imagenes/lapizWhite.png" id="10_qve5v"]
 [ext_resource type="Texture2D" uid="uid://bdak6e2wlxlad" path="res://imagenes/LupaIcon.png" id="11_ro3c3"]
 [ext_resource type="Texture2D" uid="uid://bhu6cpiefeahg" path="res://imagenes/lineaScan.png" id="12_t4jkt"]
 [ext_resource type="PackedScene" uid="uid://cby6sg4fvukrs" path="res://escenas/gena.tscn" id="13_fpuh1"]
+[ext_resource type="Texture2D" uid="uid://buqnmr5i4wi5w" path="res://imagenes/GenaCheckList.png" id="14_8p663"]
+[ext_resource type="Texture2D" uid="uid://dp7xp404kqtto" path="res://imagenes/tablonTareas.png" id="15_y727t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g3vj1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e0skk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5hw47"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kgplo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8p663"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hfcx1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y727t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_beshd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2xp46"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5m6on"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l34rc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xxmoc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qve5v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vt5qv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1h7qt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6gdvt"]
 
 [sub_resource type="Animation" id="Animation_fpuh1"]
 length = 0.001
@@ -194,6 +234,60 @@ _data = {
 &"ScannerButton3": SubResource("Animation_hfcx1")
 }
 
+[sub_resource type="Animation" id="Animation_l34rc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GenaNivel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1200, 808)]
+}
+
+[sub_resource type="Animation" id="Animation_5m6on"]
+resource_name = "default"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GenaNivel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1200, 620), Vector2(1200, 625)]
+}
+
+[sub_resource type="Animation" id="Animation_2xp46"]
+resource_name = "flyup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GenaNivel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1200, 808), Vector2(1200, 620)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5m6on"]
+_data = {
+&"RESET": SubResource("Animation_l34rc"),
+&"default": SubResource("Animation_5m6on"),
+&"flyup": SubResource("Animation_2xp46")
+}
+
 [node name="Nivel" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -219,19 +313,108 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -243.75
-offset_top = -317.414
-offset_right = 243.75
-offset_bottom = 317.414
+offset_left = -244.0
+offset_top = -300.0
+offset_right = 233.75
+offset_bottom = 284.414
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_6hejw")
+
+[node name="TablonTareas" type="Sprite2D" parent="."]
+position = Vector2(193, 192.00002)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("15_y727t")
+
+[node name="Notas" type="Sprite2D" parent="."]
+position = Vector2(197, 527)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_beshd")
+script = ExtResource("6_hfcx1")
+
+[node name="SiguientePagina" type="TextureButton" parent="Notas"]
+offset_left = 134.44446
+offset_top = 128.8889
+offset_right = 174.44446
+offset_bottom = 169.8889
+texture_normal = ExtResource("7_l34rc")
+texture_hover = ExtResource("8_5m6on")
+
+[node name="AnteriorPagina" type="TextureButton" parent="Notas"]
+offset_left = -156.66667
+offset_top = 128.8889
+offset_right = -116.66667
+offset_bottom = 169.8889
+texture_normal = ExtResource("7_l34rc")
+texture_hover = ExtResource("8_5m6on")
+flip_h = true
+
+[node name="BotonTextoNotas" type="Button" parent="Notas"]
+offset_left = -145.55557
+offset_top = -95.55554
+offset_right = 145.55554
+offset_bottom = 124.44446
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.50423163, 0.0016762977, 0.7118072, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g3vj1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e0skk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5hw47")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kgplo")
+alignment = 0
+autowrap_mode = 3
+
+[node name="LabelNumeroPagina" type="Label" parent="Notas"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -215.27779
+offset_top = -218.33336
+offset_right = -120.83333
+offset_bottom = -184.33336
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+
+[node name="BotonEscribir" type="TextureButton" parent="Notas"]
+visible = false
+offset_left = 454.44446
+offset_top = -362.22223
+offset_right = 528.44446
+offset_bottom = -288.22223
+texture_normal = ExtResource("9_xxmoc")
+texture_hover = ExtResource("10_qve5v")
+
+[node name="BotonEscribir2" type="TextureButton" parent="Notas"]
+visible = false
+offset_left = 454.44446
+offset_top = -215.55556
+offset_right = 528.44446
+offset_bottom = -141.55556
+texture_normal = ExtResource("9_xxmoc")
+texture_hover = ExtResource("10_qve5v")
+
+[node name="BotonEscribir3" type="TextureButton" parent="Notas"]
+visible = false
+offset_left = 454.44446
+offset_top = -72.22223
+offset_right = 528.44446
+offset_bottom = 1.777771
+texture_normal = ExtResource("9_xxmoc")
+texture_hover = ExtResource("10_qve5v")
 
 [node name="Reloj" parent="." instance=ExtResource("2_xkxn8")]
 layout_mode = 0
 hora_inicio = 12
 am_inicio = false
-hora_fin = 1
+hora_fin = 6
+horas_alerta = 4
+minutos_alerta = 0
 
 [node name="studyTime" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_xkxn8")
@@ -268,60 +451,86 @@ texture_hover = ExtResource("8_upgkb")
 stretch_mode = 0
 
 [node name="Buttontext" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 448.0
 offset_top = 200.0
 offset_right = 837.0
 offset_bottom = 300.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9453402, 0.07438291, 0.9999998, 1)
 theme_override_font_sizes/font_size = 15
-text = "placehorder"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8p663")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hfcx1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_y727t")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_beshd")
 alignment = 0
 autowrap_mode = 3
 
 [node name="Buttonchange" type="Button" parent="."]
 layout_mode = 0
-offset_left = 312.0
-offset_top = 205.0
-offset_right = 392.0
-offset_bottom = 295.9804
+offset_left = 1160.0
+offset_top = 423.0
+offset_right = 1240.0
+offset_bottom = 513.9804
 icon = ExtResource("11_ro3c3")
 expand_icon = true
 
 [node name="ButtonText2" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 448.0
 offset_top = 325.0
 offset_right = 837.0
 offset_bottom = 425.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.94509804, 0.07450981, 1, 1)
 theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2xp46")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5m6on")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_l34rc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xxmoc")
 alignment = 0
 autowrap_mode = 3
 
 [node name="Buttonchange2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 312.0
-offset_top = 332.0
-offset_right = 392.0
-offset_bottom = 422.9804
+offset_left = 1158.0
+offset_top = 423.0
+offset_right = 1238.0
+offset_bottom = 513.9804
 icon = ExtResource("11_ro3c3")
 expand_icon = true
 
 [node name="ButtonText3" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 448.0
 offset_top = 450.0
 offset_right = 837.0
 offset_bottom = 558.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.94509804, 0.07450981, 1, 1)
 theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qve5v")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vt5qv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1h7qt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6gdvt")
 alignment = 0
 autowrap_mode = 3
 
 [node name="Buttonchange3" type="Button" parent="."]
 layout_mode = 0
-offset_left = 316.0
-offset_top = 460.0
-offset_right = 396.0
-offset_bottom = 550.9804
+offset_left = 1159.0
+offset_top = 426.0
+offset_right = 1239.0
+offset_bottom = 516.9804
 icon = ExtResource("11_ro3c3")
 expand_icon = true
 
@@ -354,6 +563,22 @@ speed_scale = 2.0
 [node name="Gena" parent="." instance=ExtResource("13_fpuh1")]
 layout_mode = 1
 
+[node name="GenaNivel" type="Sprite2D" parent="."]
+position = Vector2(1200, 808)
+scale = Vector2(0.3329939, 0.3329939)
+texture = ExtResource("14_8p663")
+
+[node name="AnimationGenaNivel" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5m6on")
+}
+
+[connection signal="pressed" from="Notas/SiguientePagina" to="Notas" method="_on_siguiente_pagina_pressed"]
+[connection signal="pressed" from="Notas/AnteriorPagina" to="Notas" method="_on_anterior_pagina_pressed"]
+[connection signal="pressed" from="Notas/BotonTextoNotas" to="Notas" method="_on_boton_texto_notas_pressed"]
+[connection signal="pressed" from="Notas/BotonEscribir" to="." method="_on_boton_escribir_pressed"]
+[connection signal="pressed" from="Notas/BotonEscribir2" to="." method="_on_boton_escribir_2_pressed"]
+[connection signal="pressed" from="Notas/BotonEscribir3" to="." method="_on_boton_escribir_3_pressed"]
 [connection signal="pressed" from="TextureButtonPause" to="." method="_on_texture_button_pause_pressed"]
 [connection signal="pressed" from="Buttontext" to="." method="_on_buttontext_pressed"]
 [connection signal="pressed" from="Buttonchange" to="." method="_on_buttonchange_pressed"]
@@ -361,3 +586,4 @@ layout_mode = 1
 [connection signal="pressed" from="Buttonchange2" to="." method="_on_buttonchange_2_pressed"]
 [connection signal="pressed" from="ButtonText3" to="." method="_on_button_text_3_pressed"]
 [connection signal="pressed" from="Buttonchange3" to="." method="_on_buttonchange_3_pressed"]
+[connection signal="animation_finished" from="AnimationGenaNivel" to="." method="_on_animation_gena_nivel_animation_finished"]
