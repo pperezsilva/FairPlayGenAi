@@ -1,10 +1,11 @@
-[gd_scene load_steps=50 format=3 uid="uid://pvm6hb4e1f6l"]
+[gd_scene load_steps=69 format=3 uid="uid://pvm6hb4e1f6l"]
 
 [ext_resource type="Script" uid="uid://c4nomi2i1qqi5" path="res://scripts/nivel.gd" id="1_rmw23"]
 [ext_resource type="Texture2D" uid="uid://beusa6lgul7dl" path="res://imagenes/bgNivel.png" id="2_ul41a"]
 [ext_resource type="PackedScene" uid="uid://derolybto7u3m" path="res://escenas/reloj.tscn" id="2_xkxn8"]
 [ext_resource type="Texture2D" uid="uid://bfsp52d6l7ku8" path="res://imagenes/entregable.png" id="3_6hejw"]
 [ext_resource type="AudioStream" uid="uid://v0qjhoak2wh2" path="res://sonidos/musica/studyTime.wav" id="3_xkxn8"]
+[ext_resource type="Texture2D" uid="uid://cipp710epsd06" path="res://imagenes/EnviarMini.png" id="4_5hw47"]
 [ext_resource type="Texture2D" uid="uid://dxhhvit8lnx8i" path="res://imagenes/notas.png" id="5_beshd"]
 [ext_resource type="AudioStream" uid="uid://cjfix01450ht4" path="res://sonidos/sfx/sndClick.wav" id="5_cr4x3"]
 [ext_resource type="PackedScene" uid="uid://bf8s6rpn0p4ci" path="res://escenas/musicaNivel.tscn" id="5_wddsb"]
@@ -21,6 +22,11 @@
 [ext_resource type="PackedScene" uid="uid://cby6sg4fvukrs" path="res://escenas/gena.tscn" id="13_fpuh1"]
 [ext_resource type="Texture2D" uid="uid://buqnmr5i4wi5w" path="res://imagenes/GenaCheckList.png" id="14_8p663"]
 [ext_resource type="Texture2D" uid="uid://dp7xp404kqtto" path="res://imagenes/tablonTareas.png" id="15_y727t"]
+[ext_resource type="Texture2D" uid="uid://hc2hna4n1tym" path="res://imagenes/GenaGenerating.png" id="21_6gdvt"]
+[ext_resource type="Script" uid="uid://dbqn18iqgm7qa" path="res://scripts/gena_nivel.gd" id="22_1h7qt"]
+[ext_resource type="Texture2D" uid="uid://rj8hfhop3dny" path="res://imagenes/globoTexto.png" id="23_1h7qt"]
+[ext_resource type="FontFile" uid="uid://crl5bcgo6l6mb" path="res://fuentes/Gagalin-Regular.otf" id="23_vt5qv"]
+[ext_resource type="Texture2D" uid="uid://bu1f8a4kb5rjy" path="res://imagenes/carga.png" id="25_6gdvt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g3vj1"]
 
@@ -177,6 +183,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Carga:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_8p663"]
 resource_name = "ScanerButton"
@@ -226,12 +244,93 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.5882353)]
 }
 
+[sub_resource type="Animation" id="Animation_6gdvt"]
+resource_name = "carga"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Carga:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-6.2831855, -4.712389, -3.1415927, -1.5707964, 0.0, 3.1415927]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_beshd"]
 _data = {
 &"RESET": SubResource("Animation_y727t"),
 &"ScanerButton": SubResource("Animation_8p663"),
 &"ScanerButton2": SubResource("Animation_beshd"),
-&"ScannerButton3": SubResource("Animation_hfcx1")
+&"ScannerButton3": SubResource("Animation_hfcx1"),
+&"carga": SubResource("Animation_6gdvt")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k1ghh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d6rkw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bwil3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_co5jw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1h7qt"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6gdvt"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_g3vj1"]
+resource_name = "GenaGenerating"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GenaNivel:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("21_6gdvt")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GenaNivel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.3329939, 0.3329939), Vector2(0.5, 0.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GenaNivel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1122, 585)]
 }
 
 [sub_resource type="Animation" id="Animation_l34rc"]
@@ -247,6 +346,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1200, 808)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GenaNivel:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("21_6gdvt")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GenaNivel:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.3329939, 0.3329939)]
 }
 
 [sub_resource type="Animation" id="Animation_5m6on"]
@@ -265,6 +388,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1200, 620), Vector2(1200, 625)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GenaNivel:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14_8p663")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GenaNivel:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.3329939, 0.3329939)]
+}
 
 [sub_resource type="Animation" id="Animation_2xp46"]
 resource_name = "flyup"
@@ -280,12 +427,120 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1200, 808), Vector2(1200, 620)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GenaNivel:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14_8p663")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5m6on"]
 _data = {
+&"GenaGenerating": SubResource("Animation_g3vj1"),
 &"RESET": SubResource("Animation_l34rc"),
 &"default": SubResource("Animation_5m6on"),
 &"flyup": SubResource("Animation_2xp46")
+}
+
+[sub_resource type="Animation" id="Animation_xxmoc"]
+resource_name = "Escribiendo"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Escribiendo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5333333, 1.9666667, 2.4666667, 3.0333333, 3.5, 4, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vt5qv"]
+resource_name = "Escribiendo2"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Escribiendo2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1h7qt"]
+resource_name = "Escribiendo3"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Escribiendo3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qve5v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Escribiendo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Escribiendo2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Escribiendo3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qve5v"]
+_data = {
+&"Escribiendo": SubResource("Animation_xxmoc"),
+&"Escribiendo2": SubResource("Animation_vt5qv"),
+&"Escribiendo3": SubResource("Animation_1h7qt"),
+&"RESET": SubResource("Animation_qve5v")
 }
 
 [node name="Nivel" type="Control"]
@@ -321,16 +576,76 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_6hejw")
 
+[node name="EnviarEntregable" type="TextureButton" parent="Entregable"]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 537.0
+offset_right = 539.0
+offset_bottom = 653.0
+texture_normal = ExtResource("4_5hw47")
+
 [node name="TablonTareas" type="Sprite2D" parent="."]
 position = Vector2(193, 192.00002)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("15_y727t")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TablonTareas"]
+offset_left = -147.77779
+offset_top = -21.11113
+offset_right = 155.55559
+offset_bottom = 169.99998
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Hora de entrega 6:00PM
+
+EL entregable debe contener lo siguiente:
+
+¿Qué es la energía solar?
+Importancia de la energía solar.
+Aplicaciones de la energía solar."
+
+[node name="Label" type="Label" parent="TablonTareas"]
+offset_left = -81.111115
+offset_top = -70.000015
+offset_right = 72.22223
+offset_bottom = -28.000015
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Energia Solar"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Notas" type="Sprite2D" parent="."]
 position = Vector2(197, 527)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("5_beshd")
 script = ExtResource("6_hfcx1")
+
+[node name="Edit" type="TextureButton" parent="Notas"]
+visible = false
+offset_left = 764.44446
+offset_top = -332.22223
+offset_right = 838.44446
+offset_bottom = -258.22223
+texture_normal = ExtResource("9_xxmoc")
+texture_hover = ExtResource("10_qve5v")
+
+[node name="Edit2" type="TextureButton" parent="Notas"]
+visible = false
+offset_left = 763.3334
+offset_top = -192.22224
+offset_right = 837.3334
+offset_bottom = -118.222244
+texture_normal = ExtResource("9_xxmoc")
+texture_hover = ExtResource("10_qve5v")
+
+[node name="Edit3" type="TextureButton" parent="Notas"]
+visible = false
+offset_left = 763.3333
+offset_top = -55.55556
+offset_right = 837.3333
+offset_bottom = 18.444439
+texture_normal = ExtResource("9_xxmoc")
+texture_hover = ExtResource("10_qve5v")
 
 [node name="SiguientePagina" type="TextureButton" parent="Notas"]
 offset_left = 134.44446
@@ -410,10 +725,10 @@ texture_hover = ExtResource("10_qve5v")
 
 [node name="Reloj" parent="." instance=ExtResource("2_xkxn8")]
 layout_mode = 0
-hora_inicio = 12
+hora_inicio = 2
 am_inicio = false
-hora_fin = 6
-horas_alerta = 4
+hora_fin = 7
+horas_alerta = 2
 minutos_alerta = 0
 
 [node name="studyTime" type="AudioStreamPlayer" parent="."]
@@ -499,9 +814,9 @@ autowrap_mode = 3
 
 [node name="Buttonchange2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1158.0
+offset_left = 1160.0
 offset_top = 423.0
-offset_right = 1238.0
+offset_right = 1240.0
 offset_bottom = 513.9804
 icon = ExtResource("11_ro3c3")
 expand_icon = true
@@ -528,9 +843,9 @@ autowrap_mode = 3
 [node name="Buttonchange3" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1159.0
-offset_top = 426.0
+offset_top = 423.0
 offset_right = 1239.0
-offset_bottom = 516.9804
+offset_bottom = 513.9804
 icon = ExtResource("11_ro3c3")
 expand_icon = true
 
@@ -566,13 +881,134 @@ layout_mode = 1
 [node name="GenaNivel" type="Sprite2D" parent="."]
 position = Vector2(1200, 808)
 scale = Vector2(0.3329939, 0.3329939)
-texture = ExtResource("14_8p663")
+texture = ExtResource("21_6gdvt")
+script = ExtResource("22_1h7qt")
+
+[node name="GloboTexto" type="Sprite2D" parent="GenaNivel"]
+visible = false
+position = Vector2(-348.35464, -456.46497)
+scale = Vector2(3.003058, 3.003058)
+texture = ExtResource("23_1h7qt")
+flip_h = true
+
+[node name="Label" type="Label" parent="GenaNivel/GloboTexto"]
+offset_left = -142.0
+offset_top = -31.999939
+offset_right = 161.0
+offset_bottom = 3.000061
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("23_vt5qv")
+theme_override_font_sizes/font_size = 25
+text = "¿En que puedo ayudarte?"
+
+[node name="Button" type="Button" parent="GenaNivel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -479.73865
+offset_top = -492.7433
+offset_right = -18.769165
+offset_bottom = -15.256714
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k1ghh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_d6rkw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bwil3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_co5jw")
+
+[node name="ButtonGenerate" type="Button" parent="GenaNivel"]
+visible = false
+offset_left = -813.82874
+offset_top = -1090.1101
+offset_right = -558.5687
+offset_bottom = -819.83496
+theme_override_styles/normal = SubResource("StyleBoxFlat_1h7qt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6gdvt")
+icon = ExtResource("11_ro3c3")
+expand_icon = true
 
 [node name="AnimationGenaNivel" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_5m6on")
 }
 
+[node name="Escribiendo" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.497
+anchor_top = 0.35500002
+anchor_right = 0.497
+anchor_bottom = 0.35500002
+offset_left = -89.160034
+offset_top = -31.600006
+offset_right = 88.839966
+offset_bottom = 31.899994
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.24347246, 0.29725352, 0.3947296, 1)
+theme_override_font_sizes/font_size = 20
+text = "Escribiendo ..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Escribiendo2" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.497
+anchor_top = 0.35500002
+anchor_right = 0.497
+anchor_bottom = 0.35500002
+offset_left = -89.160034
+offset_top = 95.399994
+offset_right = 88.839966
+offset_bottom = 158.9
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.24347246, 0.29725352, 0.3947296, 1)
+theme_override_font_sizes/font_size = 20
+text = "Escribiendo ..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Escribiendo3" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.497
+anchor_top = 0.35500002
+anchor_right = 0.497
+anchor_bottom = 0.35500002
+offset_left = -89.160034
+offset_top = 222.4
+offset_right = 88.839966
+offset_bottom = 285.9
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.24347246, 0.29725352, 0.3947296, 1)
+theme_override_font_sizes/font_size = 20
+text = "Escribiendo ..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationEscribiendo" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qve5v")
+}
+
+[node name="Carga" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(637.99994, 385.00003)
+scale = Vector2(1.1831628, 1.1831628)
+texture = ExtResource("25_6gdvt")
+
+[connection signal="pressed" from="Entregable/EnviarEntregable" to="." method="_on_enviar_entregable_pressed"]
+[connection signal="pressed" from="Notas/Edit" to="." method="_on_edit_pressed"]
+[connection signal="pressed" from="Notas/Edit2" to="." method="_on_edit_2_pressed"]
+[connection signal="pressed" from="Notas/Edit3" to="." method="_on_edit_3_pressed"]
 [connection signal="pressed" from="Notas/SiguientePagina" to="Notas" method="_on_siguiente_pagina_pressed"]
 [connection signal="pressed" from="Notas/AnteriorPagina" to="Notas" method="_on_anterior_pagina_pressed"]
 [connection signal="pressed" from="Notas/BotonTextoNotas" to="Notas" method="_on_boton_texto_notas_pressed"]
@@ -586,4 +1022,8 @@ libraries = {
 [connection signal="pressed" from="Buttonchange2" to="." method="_on_buttonchange_2_pressed"]
 [connection signal="pressed" from="ButtonText3" to="." method="_on_button_text_3_pressed"]
 [connection signal="pressed" from="Buttonchange3" to="." method="_on_buttonchange_3_pressed"]
+[connection signal="animation_finished" from="AnimationScanerButton" to="." method="_on_animation_scaner_button_animation_finished"]
+[connection signal="pressed" from="GenaNivel/Button" to="GenaNivel" method="_on_button_pressed"]
+[connection signal="pressed" from="GenaNivel/ButtonGenerate" to="." method="_on_button_generate_pressed"]
 [connection signal="animation_finished" from="AnimationGenaNivel" to="." method="_on_animation_gena_nivel_animation_finished"]
+[connection signal="animation_finished" from="AnimationEscribiendo" to="." method="_on_animation_escribiendo_animation_finished"]

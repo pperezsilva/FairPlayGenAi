@@ -8,7 +8,7 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
 	custom_cursor.texture = preload("res://imagenes/cursor.png")
-	custom_cursor.scale = Vector2(0.8, 0.8)
+	custom_cursor.scale = Vector2(0.6, 0.6)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
