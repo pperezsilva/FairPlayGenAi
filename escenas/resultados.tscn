@@ -1,9 +1,24 @@
 [gd_scene load_steps=8 format=3 uid="uid://ddynsu5xhjh1n"]
 
-[ext_resource type="Script" uid="uid://bb3wng7nrmuyw" path="res://resultados.gd" id="1_8tj61"]
-[ext_resource type="Texture2D" uid="uid://beusa6lgul7dl" path="res://imagenes/bgNivel.png" id="1_atr5v"]
-[ext_resource type="Texture2D" uid="uid://bh3ts8chuf86y" path="res://imagenes/TablonResultados.png" id="2_8tj61"]
-[ext_resource type="FontFile" uid="uid://cau71hgpl3dy3" path="res://fuentes/University.otf" id="4_01p4c"]
+[ext_resource type="Script" uid="uid://bb3wng7nrmuyw" path="res://scripts/resultados.gd" id="1_ujve3"]
+[ext_resource type="Texture2D" uid="uid://beusa6lgul7dl" path="res://imagenes/bgNivel.png" id="2_0b2f0"]
+[ext_resource type="Texture2D" uid="uid://bh3ts8chuf86y" path="res://imagenes/TablonResultados.png" id="3_hxsl7"]
+[ext_resource type="FontFile" uid="uid://cau71hgpl3dy3" path="res://fuentes/University.otf" id="4_043r0"]
+
+[sub_resource type="Animation" id="Animation_8tj61"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TablonResultados:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(642, -353)]
+}
 
 [sub_resource type="Animation" id="Animation_atr5v"]
 resource_name = "TablonAbajo"
@@ -21,21 +36,6 @@ tracks/0/keys = {
 "values": [Vector2(642, -353), Vector2(642, 350), Vector2(642, 250), Vector2(642, 350), Vector2(642, 300), Vector2(642, 350)]
 }
 
-[sub_resource type="Animation" id="Animation_8tj61"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TablonResultados:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(642, -353)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_01p4c"]
 _data = {
 &"RESET": SubResource("Animation_8tj61"),
@@ -49,7 +49,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_8tj61")
+script = ExtResource("1_ujve3")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -58,11 +58,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_atr5v")
+texture = ExtResource("2_0b2f0")
 
 [node name="TablonResultados" type="Sprite2D" parent="."]
 position = Vector2(642, -353)
-texture = ExtResource("2_8tj61")
+texture = ExtResource("3_hxsl7")
 
 [node name="Titulo" type="Label" parent="TablonResultados"]
 anchors_preset = 5
@@ -73,7 +73,7 @@ offset_top = -261.0
 offset_right = -258.5
 offset_bottom = -186.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_01p4c")
+theme_override_fonts/font = ExtResource("4_043r0")
 theme_override_font_sizes/font_size = 40
 text = "PUNTUACION"
 
@@ -86,7 +86,7 @@ offset_top = -157.0
 offset_right = -417.5
 offset_bottom = -82.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_01p4c")
+theme_override_fonts/font = ExtResource("4_043r0")
 theme_override_font_sizes/font_size = 30
 text = "TIEMPO"
 
@@ -100,7 +100,7 @@ offset_top = 4.0
 offset_right = 481.5
 offset_bottom = 79.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_01p4c")
+theme_override_fonts/font = ExtResource("4_043r0")
 theme_override_font_sizes/font_size = 40
 text = "10"
 
@@ -113,7 +113,7 @@ offset_top = -68.0
 offset_right = -417.5
 offset_bottom = 7.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_01p4c")
+theme_override_fonts/font = ExtResource("4_043r0")
 theme_override_font_sizes/font_size = 30
 text = "CONTENIDO"
 
@@ -127,7 +127,7 @@ offset_top = -2.0
 offset_right = 486.5
 offset_bottom = 73.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_01p4c")
+theme_override_fonts/font = ExtResource("4_043r0")
 theme_override_font_sizes/font_size = 40
 text = "10"
 
@@ -140,7 +140,7 @@ offset_top = 26.0
 offset_right = -412.5
 offset_bottom = 101.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_01p4c")
+theme_override_fonts/font = ExtResource("4_043r0")
 theme_override_font_sizes/font_size = 30
 text = "informacion"
 
@@ -154,7 +154,7 @@ offset_top = -11.0
 offset_right = 478.5
 offset_bottom = 64.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_01p4c")
+theme_override_fonts/font = ExtResource("4_043r0")
 theme_override_font_sizes/font_size = 40
 text = "10"
 

@@ -1,8 +1,62 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2l84bu2dm6gg"]
+[gd_scene load_steps=3 format=3 uid="uid://b2l84bu2dm6gg"]
 
 [ext_resource type="Texture2D" uid="uid://wr88cm8anujv" path="res://imagenes/entregable2.png" id="1_b1j6c"]
+[ext_resource type="Script" uid="uid://dnx4u41steun7" path="res://scripts/entregable.gd" id="1_kpbha"]
 
 [node name="entregable" type="Node2D"]
+script = ExtResource("1_kpbha")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_b1j6c")
+
+[node name="topic1" type="Label" parent="."]
+offset_left = -187.0
+offset_top = -183.0
+offset_right = 191.0
+offset_bottom = -145.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="topic2" type="Label" parent="."]
+offset_left = -188.0
+offset_top = -43.0
+offset_right = 193.0
+offset_bottom = -5.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="topic3" type="Label" parent="."]
+offset_left = -187.0
+offset_top = 107.0
+offset_right = 191.0
+offset_bottom = 145.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="parrafo1" type="Button" parent="."]
+offset_left = -189.0
+offset_top = -141.0
+offset_right = 192.0
+offset_bottom = -69.0
+
+[node name="parrafo2" type="Button" parent="."]
+offset_left = -189.0
+offset_top = 3.0
+offset_right = 192.0
+offset_bottom = 75.0
+
+[node name="parrafo3" type="Button" parent="."]
+offset_left = -189.0
+offset_top = 153.0
+offset_right = 192.0
+offset_bottom = 225.0

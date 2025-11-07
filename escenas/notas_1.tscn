@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://8myofaifv6pk"]
+
+[ext_resource type="Script" uid="uid://duvb4tpigxvwp" path="res://scripts/notas_1.gd" id="1_4bmv0"]
+[ext_resource type="Texture2D" uid="uid://cnd5282mqq7xy" path="res://imagenes/notas2.png" id="1_51vqj"]
+[ext_resource type="Texture2D" uid="uid://dr0lew3av4avy" path="res://imagenes/botonTriangular.png" id="3_prpjb"]
+[ext_resource type="Texture2D" uid="uid://b0j0pgjyiyd05" path="res://imagenes/botonTriangularHover.png" id="4_2ycpb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_prpjb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ycpb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vnegu"]
+
+[node name="Notas_1" type="Node2D"]
+script = ExtResource("1_4bmv0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_51vqj")
+
+[node name="numeroPagina" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = 133.0
+offset_right = 38.5
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "pag"
+
+[node name="siguientePag" type="TextureButton" parent="."]
+offset_left = 117.0
+offset_top = 120.0
+offset_right = 140.0
+offset_bottom = 161.0
+texture_normal = ExtResource("3_prpjb")
+texture_hover = ExtResource("4_2ycpb")
+
+[node name="anteriorPag" type="TextureButton" parent="."]
+offset_left = -138.0
+offset_top = 121.0
+offset_right = -110.0
+offset_bottom = 162.0
+texture_normal = ExtResource("3_prpjb")
+texture_hover = ExtResource("4_2ycpb")
+flip_h = true
+
+[node name="btnTextoNotas" type="Button" parent="."]
+offset_left = -139.0
+offset_top = -75.0
+offset_right = 138.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.5058824, 0, 0.7137255, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_prpjb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2ycpb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vnegu")
+text = "TEXTO DE EJEMPLO"
+alignment = 0
+autowrap_mode = 3
+
+[connection signal="pressed" from="siguientePag" to="." method="_on_siguiente_pag_pressed"]
+[connection signal="pressed" from="anteriorPag" to="." method="_on_anterior_pag_pressed"]

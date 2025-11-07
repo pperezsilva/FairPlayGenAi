@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://5pavtmaqmsft"]
 
-[ext_resource type="Script" uid="uid://dypqwlmw7m3wv" path="res://escenas/gena_nv_1.gd" id="1_lirp4"]
+[ext_resource type="Script" uid="uid://dypqwlmw7m3wv" path="res://scripts/gena_nv_1.gd" id="1_lirp4"]
 [ext_resource type="Texture2D" uid="uid://ju0pploeh8i2" path="res://imagenes/GloboTexto2.png" id="2_rfjgv"]
 [ext_resource type="FontFile" uid="uid://crl5bcgo6l6mb" path="res://fuentes/Gagalin-Regular.otf" id="3_8j0tn"]
 [ext_resource type="Texture2D" uid="uid://buqnmr5i4wi5w" path="res://imagenes/GenaCheckList.png" id="4_bpbes"]
