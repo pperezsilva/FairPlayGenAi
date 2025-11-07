@@ -1,0 +1,206 @@
+[gd_scene load_steps=21 format=3 uid="uid://bumnqdkwapr0f"]
+
+[ext_resource type="Texture2D" uid="uid://beusa6lgul7dl" path="res://imagenes/bgNivel.png" id="1_xi31o"]
+[ext_resource type="Script" uid="uid://yuqxaw1ouaiw" path="res://scripts/nivel_1.gd" id="1_yyrpj"]
+[ext_resource type="Texture2D" uid="uid://bknaieydecwpk" path="res://imagenes/interfaceTop.png" id="2_6epq6"]
+[ext_resource type="PackedScene" uid="uid://derolybto7u3m" path="res://escenas/reloj.tscn" id="2_eciuy"]
+[ext_resource type="Texture2D" uid="uid://dp7xp404kqtto" path="res://imagenes/tablonTareas.png" id="2_kd3qp"]
+[ext_resource type="AudioStream" uid="uid://v0qjhoak2wh2" path="res://sonidos/musica/studyTime.wav" id="4_320mp"]
+[ext_resource type="PackedScene" uid="uid://cby6sg4fvukrs" path="res://escenas/gena.tscn" id="5_320mp"]
+[ext_resource type="AudioStream" uid="uid://cjfix01450ht4" path="res://sonidos/sfx/sndClick.wav" id="5_kd3qp"]
+[ext_resource type="Texture2D" uid="uid://c83ym05v8h8pi" path="res://imagenes/bgGena.png" id="8_vfns5"]
+[ext_resource type="Texture2D" uid="uid://buqnmr5i4wi5w" path="res://imagenes/GenaCheckList.png" id="9_h0wtr"]
+[ext_resource type="Texture2D" uid="uid://d4fe0sjxeygxe" path="res://imagenes/btnPausaw1.png" id="10_7ce3s"]
+[ext_resource type="Texture2D" uid="uid://b0ejim6a4ewwe" path="res://imagenes/btnPausab1.png" id="11_yyrpj"]
+[ext_resource type="Script" uid="uid://c7g8s0heymb4f" path="res://scripts/gena_nivel1.gd" id="12_o46bk"]
+[ext_resource type="PackedScene" uid="uid://3lrhs005iu6k" path="res://escenas/tablon_tareas.tscn" id="14_50uyw"]
+[ext_resource type="PackedScene" uid="uid://8myofaifv6pk" path="res://escenas/notas.tscn" id="15_fnctx"]
+[ext_resource type="PackedScene" uid="uid://b2l84bu2dm6gg" path="res://escenas/entregable.tscn" id="16_1t0n7"]
+
+[sub_resource type="Animation" id="Animation_7ce3s"]
+resource_name = "GenaAparece"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GenaNivel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1163, 875), Vector2(1163, 600)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GenaNivel:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_h0wtr")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GenaNivel:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.41649693, 0.41649696)]
+}
+
+[sub_resource type="Animation" id="Animation_o46bk"]
+resource_name = "GenaFlotando"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GenaNivel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1163, 600), Vector2(1163, 605)]
+}
+
+[sub_resource type="Animation" id="Animation_yyrpj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GenaNivel:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_h0wtr")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GenaNivel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.41649693, 0.41649696)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GenaNivel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1163, 875)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yyrpj"]
+_data = {
+&"GenaAparece": SubResource("Animation_7ce3s"),
+&"GenaFlotando": SubResource("Animation_o46bk"),
+&"RESET": SubResource("Animation_yyrpj")
+}
+
+[node name="Nivel 1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yyrpj")
+
+[node name="TextureBackground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xi31o")
+
+[node name="InterfaceTop" type="Sprite2D" parent="."]
+position = Vector2(787, 34)
+texture = ExtResource("2_6epq6")
+
+[node name="BtnPausa" type="TextureButton" parent="InterfaceTop"]
+offset_left = 412.0
+offset_top = -13.999998
+offset_right = 489.0
+offset_bottom = 28.000002
+scale = Vector2(0.75903976, 0.76)
+texture_normal = ExtResource("10_7ce3s")
+texture_hover = ExtResource("11_yyrpj")
+
+[node name="Reloj" parent="InterfaceTop" instance=ExtResource("2_eciuy")]
+offset_left = -220.0
+offset_top = -28.0
+offset_right = -220.0
+offset_bottom = -28.0
+
+[node name="Label" type="Label" parent="InterfaceTop"]
+offset_left = -174.0
+offset_top = 19.0
+offset_right = -95.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 22
+text = "Nivel 1"
+
+[node name="TablonTareas" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(614, 342)
+texture = ExtResource("2_kd3qp")
+
+[node name="studyTime" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_320mp")
+
+[node name="sndClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_kd3qp")
+bus = &"SFX"
+
+[node name="Genabg" type="Sprite2D" parent="."]
+position = Vector2(1219, 664)
+texture = ExtResource("8_vfns5")
+
+[node name="GenaNivel" type="Sprite2D" parent="."]
+position = Vector2(1163, 875)
+scale = Vector2(0.41649693, 0.41649696)
+texture = ExtResource("9_h0wtr")
+script = ExtResource("12_o46bk")
+
+[node name="AnimationGena" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yyrpj")
+}
+
+[node name="TablonTareas2" parent="." instance=ExtResource("14_50uyw")]
+position = Vector2(189, 191)
+
+[node name="Notas" parent="." instance=ExtResource("15_fnctx")]
+position = Vector2(194, 527)
+
+[node name="entregable" parent="." instance=ExtResource("16_1t0n7")]
+position = Vector2(648, 399)
+
+[node name="Gena" parent="." instance=ExtResource("5_320mp")]
+layout_mode = 1
+
+[connection signal="animation_finished" from="AnimationGena" to="." method="_on_animation_gena_animation_finished"]
