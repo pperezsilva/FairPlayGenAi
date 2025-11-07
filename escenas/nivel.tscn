@@ -665,10 +665,10 @@ texture_hover = ExtResource("8_5m6on")
 flip_h = true
 
 [node name="BotonTextoNotas" type="Button" parent="Notas"]
-offset_left = -145.55557
-offset_top = -95.55554
-offset_right = 145.55554
-offset_bottom = 124.44446
+offset_left = -145.55556
+offset_top = -94.44443
+offset_right = 145.55556
+offset_bottom = 125.55557
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
