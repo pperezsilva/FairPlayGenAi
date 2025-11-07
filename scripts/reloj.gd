@@ -33,6 +33,9 @@ var tick_contador: int = 0
 var en_alerta: bool = false
 
 func _ready() -> void:
+	reloj_label.add_theme_font_size_override("font_size", 50)
+	#reloj_label.add_theme_color_override("font_color", Color(1, 1, 0))
+	
 	hora_actual = hora_inicio
 	minuto_actual = minuto_inicio
 	es_am = am_inicio

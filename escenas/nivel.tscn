@@ -876,6 +876,7 @@ libraries = {
 speed_scale = 2.0
 
 [node name="Gena" parent="." instance=ExtResource("13_fpuh1")]
+visible = false
 layout_mode = 1
 
 [node name="GenaNivel" type="Sprite2D" parent="."]

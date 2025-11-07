@@ -22,11 +22,11 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	if cdialogos <= 2:
+	if cdialogos < dialogos.size():
 		$AnimationTextBox.play("show")
 		$TextBox/Label.text = dialogos[cdialogos]
 		cdialogos += 1
-	elif cdialogos >= 3:
+	elif cdialogos >= dialogos.size():
 		$TextBox.hide()
 		$AnimationGena.play("FliyingAway")
 

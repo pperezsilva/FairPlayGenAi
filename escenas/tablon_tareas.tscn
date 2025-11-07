@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://3lrhs005iu6k"]
+
+[ext_resource type="Script" uid="uid://cqywongg2yfbm" path="res://scripts/tablon_tareas.gd" id="1_ugwb5"]
+[ext_resource type="Texture2D" uid="uid://crtvbiuul6xhk" path="res://imagenes/TablonTareas2.png" id="2_ii3hn"]
+[ext_resource type="FontFile" uid="uid://ccpaegydw1w7f" path="res://fuentes/DS-DIGIB.ttf" id="2_ugwb5"]
+
+[node name="TablonTareas" type="Node2D"]
+script = ExtResource("1_ugwb5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ii3hn")
+
+[node name="lblReloj" type="Label" parent="."]
+offset_left = -17.0
+offset_top = -60.0
+offset_right = 90.0
+offset_bottom = -26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ugwb5")
+theme_override_font_sizes/font_size = 30
+text = "Placeh"
+
+[node name="lblTexto1" type="Label" parent="."]
+offset_left = -113.0
+offset_top = -9.0
+offset_right = 117.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Placehorder"
+
+[node name="lblTexto2" type="Label" parent="."]
+offset_left = -113.0
+offset_top = 40.0
+offset_right = 117.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Placehorder"
+
+[node name="lblTexto3" type="Label" parent="."]
+offset_left = -113.0
+offset_top = 87.0
+offset_right = 117.0
+offset_bottom = 134.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Placehorder"

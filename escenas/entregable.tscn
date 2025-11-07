@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2l84bu2dm6gg"]
+
+[ext_resource type="Texture2D" uid="uid://wr88cm8anujv" path="res://imagenes/entregable2.png" id="1_b1j6c"]
+
+[node name="entregable" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b1j6c")
