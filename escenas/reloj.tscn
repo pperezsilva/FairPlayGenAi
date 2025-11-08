@@ -1,30 +1,103 @@
-[gd_scene load_steps=4 format=3 uid="uid://derolybto7u3m"]
+[gd_scene load_steps=7 format=3 uid="uid://derolybto7u3m"]
 
 [ext_resource type="Script" uid="uid://l4reut65ve38" path="res://scripts/reloj.gd" id="1_bjfri"]
 [ext_resource type="FontFile" uid="uid://ccpaegydw1w7f" path="res://fuentes/DS-DIGIB.ttf" id="2_6hnnd"]
 [ext_resource type="AudioStream" uid="uid://cd01l751x8rog" path="res://sonidos/musica/sndTick.wav" id="3_6hnnd"]
 
+[sub_resource type="Animation" id="Animation_6hnnd"]
+resource_name = "FastTime"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RelojLabel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RelojLabel:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.03333333, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.94897836, 0, 0.19060597, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8kcpb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RelojLabel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RelojLabel:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pk2kf"]
+_data = {
+&"FastTime": SubResource("Animation_6hnnd"),
+&"RESET": SubResource("Animation_8kcpb")
+}
+
 [node name="Reloj" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_bjfri")
+hora_inicio = 2
+am_inicio = false
+hora_fin = 8
 am_fin = false
 minutos_por_tick = 10
 segundos_por_tick = 3.0
-ticks_por_sonido = 6
-horas_alerta = 1
+ticks_por_sonido = 10
+horas_alerta = 2
+minutos_alerta = 0
 
 [node name="RelojLabel" type="Label" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_6hnnd")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 46
+text = "00:00 --"
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="TickPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_6hnnd")
 bus = &"SFX"
+
+[node name="AnimReloj" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pk2kf")
+}
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

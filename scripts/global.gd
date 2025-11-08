@@ -8,6 +8,11 @@ var parrafos = [0,0,0]
 
 var parrafosFinales = ["","",""]
 
+#####
+
+var select = ""
+var paragraph = [0,0,0]
+var action = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
