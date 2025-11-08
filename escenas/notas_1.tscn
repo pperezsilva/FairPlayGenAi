@@ -68,3 +68,4 @@ autowrap_mode = 3
 
 [connection signal="pressed" from="siguientePag" to="." method="_on_siguiente_pag_pressed"]
 [connection signal="pressed" from="anteriorPag" to="." method="_on_anterior_pag_pressed"]
+[connection signal="pressed" from="btnTextoNotas" to="." method="_on_btn_texto_notas_pressed"]

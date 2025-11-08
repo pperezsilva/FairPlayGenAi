@@ -51,6 +51,15 @@ func _ready() -> void:
 	# al inicio siempre estado normal
 	gblVarEdoMusica.estado_musica = 0
 
+func _process(delta: float) -> void:
+	if global.action == true:
+		timer.wait_time = 1
+		$AnimReloj.play("FastTime")
+	elif global.action == false:
+		timer.wait_time = segundos_por_tick
+		$AnimReloj.stop()
+		$RelojLabel.add_theme_color_override("font_color", Color.WHITE)
+
 func _on_Timer_timeout() -> void:
 	avanzar_tiempo()
 	actualizar_label()
@@ -79,17 +88,8 @@ func actualizar_label() -> void:
 	reloj_label.text = "%02d:%02d %s" % [hora_actual, minuto_actual, sufijo]
 
 func _reproducir_tick() -> void:
-	if en_alerta:
-		# ticks acelerados: cada tick del reloj
-		if tick_player.stream:
-			tick_player.play(4.3)
-	else:
-		# ticks normales (según configuración)
-		tick_contador += 1
-		if tick_contador >= ticks_por_sonido:
-			if tick_player.stream:
-				tick_player.play(4.3)
-			tick_contador = 0
+	if tick_player.stream:
+		tick_player.play(4.3)
 
 func verificar_alerta() -> void:
 	if not en_alerta:

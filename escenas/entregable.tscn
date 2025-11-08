@@ -1,7 +1,112 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2l84bu2dm6gg"]
+[gd_scene load_steps=14 format=3 uid="uid://b2l84bu2dm6gg"]
 
 [ext_resource type="Texture2D" uid="uid://wr88cm8anujv" path="res://imagenes/entregable2.png" id="1_b1j6c"]
 [ext_resource type="Script" uid="uid://dnx4u41steun7" path="res://scripts/entregable.gd" id="1_kpbha"]
+[ext_resource type="Texture2D" uid="uid://cct47oh10culh" path="res://lapiz.png" id="3_3ef16"]
+[ext_resource type="Texture2D" uid="uid://c7rnpb55ik14" path="res://imagenes/lapizWhite.png" id="4_msg20"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msg20"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xwtfv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yu6bs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6tyvk"]
+
+[sub_resource type="Animation" id="Animation_xxmoc"]
+resource_name = "Escribiendo"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Escribiendo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5333333, 1.9666667, 2.4666667, 3.0333333, 3.5, 4, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vt5qv"]
+resource_name = "Escribiendo2"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Escribiendo2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1h7qt"]
+resource_name = "Escribiendo3"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Escribiendo3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qve5v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Escribiendo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Escribiendo2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Escribiendo3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qve5v"]
+_data = {
+&"Escribiendo": SubResource("Animation_xxmoc"),
+&"Escribiendo2": SubResource("Animation_vt5qv"),
+&"Escribiendo3": SubResource("Animation_1h7qt"),
+&"RESET": SubResource("Animation_qve5v")
+}
 
 [node name="entregable" type="Node2D"]
 script = ExtResource("1_kpbha")
@@ -44,19 +149,143 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="parrafo1" type="Button" parent="."]
+visible = false
 offset_left = -189.0
 offset_top = -141.0
 offset_right = 192.0
 offset_bottom = -69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.75026673, 0.0020030094, 0.9275703, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_msg20")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xwtfv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yu6bs")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6tyvk")
+autowrap_mode = 3
 
 [node name="parrafo2" type="Button" parent="."]
+visible = false
 offset_left = -189.0
 offset_top = 3.0
 offset_right = 192.0
 offset_bottom = 75.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.75026673, 0.0020030094, 0.9275703, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_msg20")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xwtfv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yu6bs")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6tyvk")
+autowrap_mode = 3
 
 [node name="parrafo3" type="Button" parent="."]
+visible = false
 offset_left = -189.0
 offset_top = 153.0
 offset_right = 192.0
 offset_bottom = 225.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.75026673, 0.0020030094, 0.9275703, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_msg20")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xwtfv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yu6bs")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6tyvk")
+autowrap_mode = 3
+
+[node name="btnEscribir" type="TextureButton" parent="."]
+visible = false
+offset_left = -31.0
+offset_top = -145.0
+offset_right = 43.0
+offset_bottom = -71.0
+texture_normal = ExtResource("3_3ef16")
+texture_hover = ExtResource("4_msg20")
+
+[node name="btnEscribir2" type="TextureButton" parent="."]
+visible = false
+offset_left = -31.0
+offset_top = -3.0
+offset_right = 43.0
+offset_bottom = 71.0
+texture_normal = ExtResource("3_3ef16")
+texture_hover = ExtResource("4_msg20")
+
+[node name="btnEscribir3" type="TextureButton" parent="."]
+visible = false
+offset_left = -31.0
+offset_top = 149.0
+offset_right = 43.0
+offset_bottom = 223.0
+texture_normal = ExtResource("3_3ef16")
+texture_hover = ExtResource("4_msg20")
+
+[node name="Escribiendo" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.497
+anchor_top = 0.35500002
+anchor_right = 0.497
+anchor_bottom = 0.35500002
+offset_left = -89.0
+offset_top = -136.0
+offset_right = 89.0
+offset_bottom = -72.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.24347246, 0.29725352, 0.3947296, 1)
+theme_override_font_sizes/font_size = 20
+text = "Escribiendo ..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Escribiendo2" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.497
+anchor_top = 0.35500002
+anchor_right = 0.497
+anchor_bottom = 0.35500002
+offset_left = -89.0
+offset_top = 6.0
+offset_right = 89.0
+offset_bottom = 69.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.24347246, 0.29725352, 0.3947296, 1)
+theme_override_font_sizes/font_size = 20
+text = "Escribiendo ..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Escribiendo3" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.497
+anchor_top = 0.35500002
+anchor_right = 0.497
+anchor_bottom = 0.35500002
+offset_left = -89.0
+offset_top = 159.0
+offset_right = 89.0
+offset_bottom = 222.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.24347246, 0.29725352, 0.3947296, 1)
+theme_override_font_sizes/font_size = 20
+text = "Escribiendo ..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationEscribiendo" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qve5v")
+}
+
+[connection signal="pressed" from="btnEscribir" to="." method="_on_btn_escribir_pressed"]
+[connection signal="pressed" from="btnEscribir2" to="." method="_on_btn_escribir_2_pressed"]
+[connection signal="pressed" from="btnEscribir3" to="." method="_on_btn_escribir_3_pressed"]
+[connection signal="animation_finished" from="AnimationEscribiendo" to="." method="_on_animation_escribiendo_animation_finished"]

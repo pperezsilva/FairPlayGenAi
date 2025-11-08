@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bumnqdkwapr0f"]
+[gd_scene load_steps=19 format=3 uid="uid://bumnqdkwapr0f"]
 
 [ext_resource type="Script" uid="uid://yuqxaw1ouaiw" path="res://scripts/nivel_1.gd" id="1_lgf0p"]
 [ext_resource type="Texture2D" uid="uid://beusa6lgul7dl" path="res://imagenes/bgNivel.png" id="2_bvwj0"]
@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://d4fe0sjxeygxe" path="res://imagenes/btnPausaw1.png" id="4_xqdpg"]
 [ext_resource type="Texture2D" uid="uid://b0ejim6a4ewwe" path="res://imagenes/btnPausab1.png" id="5_lnmr5"]
 [ext_resource type="PackedScene" uid="uid://derolybto7u3m" path="res://escenas/reloj.tscn" id="6_biv72"]
-[ext_resource type="AudioStream" uid="uid://v0qjhoak2wh2" path="res://sonidos/musica/studyTime.wav" id="8_wh2m3"]
-[ext_resource type="AudioStream" uid="uid://cjfix01450ht4" path="res://sonidos/sfx/sndClick.wav" id="9_7562m"]
 [ext_resource type="Texture2D" uid="uid://c83ym05v8h8pi" path="res://imagenes/bgGena.png" id="10_iatsr"]
 [ext_resource type="Texture2D" uid="uid://buqnmr5i4wi5w" path="res://imagenes/GenaCheckList.png" id="11_622t7"]
 [ext_resource type="Script" uid="uid://c7g8s0heymb4f" path="res://scripts/gena_nivel1.gd" id="12_14whf"]
@@ -15,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://8myofaifv6pk" path="res://escenas/notas_1.tscn" id="14_dt1ax"]
 [ext_resource type="PackedScene" uid="uid://b2l84bu2dm6gg" path="res://escenas/entregable.tscn" id="15_vpnp5"]
 [ext_resource type="PackedScene" uid="uid://cby6sg4fvukrs" path="res://escenas/gena.tscn" id="16_2sgaa"]
+[ext_resource type="PackedScene" uid="uid://bf8s6rpn0p4ci" path="res://escenas/musicaNivel.tscn" id="16_lgf0p"]
 
 [sub_resource type="Animation" id="Animation_7ce3s"]
 resource_name = "GenaAparece"
@@ -163,13 +162,6 @@ offset_bottom = 53.0
 theme_override_font_sizes/font_size = 22
 text = "Nivel 1"
 
-[node name="studyTime" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_wh2m3")
-
-[node name="sndClick" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_7562m")
-bus = &"SFX"
-
 [node name="Genabg" type="Sprite2D" parent="."]
 position = Vector2(1219, 664)
 texture = ExtResource("10_iatsr")
@@ -193,6 +185,8 @@ position = Vector2(194, 527)
 
 [node name="entregable" parent="." instance=ExtResource("15_vpnp5")]
 position = Vector2(648, 399)
+
+[node name="MusicaNivel" parent="." instance=ExtResource("16_lgf0p")]
 
 [node name="Gena" parent="." instance=ExtResource("16_2sgaa")]
 layout_mode = 1

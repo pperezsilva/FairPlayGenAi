@@ -71,3 +71,27 @@ func _on_anterior_pag_pressed() -> void:
 	
 	if pag + 1 < paginas.size():
 		$siguientePag.show()
+
+
+func _on_btn_texto_notas_pressed() -> void:
+	if global.action == false:
+		global.select = paginas[pag]["parafraseo"]
+		print(global.select)
+		var btnEscribir = get_parent().get_node("entregable/btnEscribir")
+		var btnEscribir2 = get_parent().get_node("entregable/btnEscribir2")
+		var btnEscribir3 = get_parent().get_node("entregable/btnEscribir3")
+		
+		if btnEscribir.visible == false and global.paragraph[0] == 0: 
+			btnEscribir.show()
+		else:
+			btnEscribir.hide()
+		
+		if btnEscribir2.visible == false and global.paragraph[1] == 0: 
+			btnEscribir2.show()
+		else:
+			btnEscribir2.hide()
+			
+		if btnEscribir3.visible == false and global.paragraph[2] == 0: 
+			btnEscribir3.show()
+		else:
+			btnEscribir3.hide()
