@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cby6sg4fvukrs"]
+[gd_scene load_steps=18 format=3 uid="uid://cby6sg4fvukrs"]
 
 [ext_resource type="Script" uid="uid://bowvm52g28x5u" path="res://scripts/gena.gd" id="1_m6104"]
 [ext_resource type="Texture2D" uid="uid://cdl8c3mwrqu4i" path="res://imagenes/GenaVeryHappy.png" id="1_o6lgn"]
@@ -24,6 +24,8 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vi7vd"]
 
 [sub_resource type="Animation" id="Animation_0hla7"]
 resource_name = "changetoChecklist"
@@ -270,6 +272,7 @@ theme_override_fonts/font = ExtResource("3_vi7vd")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_eevyr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vi7vd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vi7vd")
 text = "Continuar"
 
 [node name="Gena" type="Sprite2D" parent="."]

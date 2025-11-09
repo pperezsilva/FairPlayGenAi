@@ -54,10 +54,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if global.action == true:
 		timer.wait_time = 1
-		$AnimReloj.play("FastTime")
+		global.musicfast = true
 	elif global.action == false:
 		timer.wait_time = segundos_por_tick
-		$AnimReloj.stop()
+		global.musicfast = false
 		$RelojLabel.add_theme_color_override("font_color", Color.WHITE)
 
 func _on_Timer_timeout() -> void:
@@ -103,6 +103,7 @@ func verificar_alerta() -> void:
 		if diferencia <= minutos_totales_alerta:
 			en_alerta = true
 			gblVarEdoMusica.estado_musica = 1   # cambiamos a modo alerta
+			$AnimReloj.play("FastTime")
 
 func _hora_terminada() -> bool:
 	var total_actual = _hora_a_minutos(hora_actual, minuto_actual, es_am)

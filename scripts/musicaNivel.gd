@@ -3,7 +3,6 @@ extends Node
 @onready var musica_tranquila: AudioStreamPlayer = $sndMusica
 @onready var musica_tension: AudioStreamPlayer = $sndAlerta
 
-
 var estado_anterior: int = -1
 
 func _ready() -> void:
@@ -16,6 +15,13 @@ func _process(delta: float) -> void:
 	if gblVarEdoMusica.estado_musica != estado_anterior:
 		estado_anterior = gblVarEdoMusica.estado_musica
 		_actualizar_musica()
+	
+	if global.musicfast == true:
+		$sndMusica.pitch_scale = 1.05
+		$sndAlerta.pitch_scale = 1.05
+	else:
+		$sndMusica.pitch_scale = 1
+		$sndAlerta.pitch_scale = 1
 
 func _actualizar_musica() -> void:
 	match gblVarEdoMusica.estado_musica:

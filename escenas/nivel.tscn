@@ -725,10 +725,7 @@ texture_hover = ExtResource("10_qve5v")
 
 [node name="Reloj" parent="." instance=ExtResource("2_xkxn8")]
 layout_mode = 0
-hora_inicio = 2
-am_inicio = false
 hora_fin = 7
-horas_alerta = 2
 
 [node name="studyTime" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_xkxn8")
@@ -875,6 +872,7 @@ libraries = {
 speed_scale = 2.0
 
 [node name="Gena" parent="." instance=ExtResource("13_fpuh1")]
+visible = false
 layout_mode = 1
 
 [node name="GenaNivel" type="Sprite2D" parent="."]
