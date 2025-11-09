@@ -1,15 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://8myofaifv6pk"]
+[gd_scene load_steps=10 format=3 uid="uid://8myofaifv6pk"]
 
 [ext_resource type="Script" uid="uid://duvb4tpigxvwp" path="res://scripts/notas_1.gd" id="1_4bmv0"]
 [ext_resource type="Texture2D" uid="uid://cnd5282mqq7xy" path="res://imagenes/notas2.png" id="1_51vqj"]
 [ext_resource type="Texture2D" uid="uid://dr0lew3av4avy" path="res://imagenes/botonTriangular.png" id="3_prpjb"]
 [ext_resource type="Texture2D" uid="uid://b0j0pgjyiyd05" path="res://imagenes/botonTriangularHover.png" id="4_2ycpb"]
+[ext_resource type="AudioStream" uid="uid://cgyt7sn2x840m" path="res://sonidos/sfx/sndError.mp3" id="5_vnegu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_prpjb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ycpb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vnegu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tqus5"]
 
 [node name="Notas_1" type="Node2D"]
 script = ExtResource("1_4bmv0")
@@ -56,15 +59,19 @@ offset_top = -75.0
 offset_right = 138.0
 offset_bottom = 115.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.5058824, 0, 0.7137255, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.5058824, 0, 0.7137255, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_prpjb")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_2ycpb")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_vnegu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tqus5")
 text = "TEXTO DE EJEMPLO"
 alignment = 0
 autowrap_mode = 3
+
+[node name="sndError" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vnegu")
 
 [connection signal="pressed" from="siguientePag" to="." method="_on_siguiente_pag_pressed"]
 [connection signal="pressed" from="anteriorPag" to="." method="_on_anterior_pag_pressed"]

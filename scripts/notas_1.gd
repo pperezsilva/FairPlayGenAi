@@ -50,6 +50,14 @@ func _process(delta: float) -> void:
 
 
 func _on_siguiente_pag_pressed() -> void:
+	var btnEscribir = get_parent().get_node("entregable/btnEscribir")
+	var btnEscribir2 = get_parent().get_node("entregable/btnEscribir2")
+	var btnEscribir3 = get_parent().get_node("entregable/btnEscribir3")
+	
+	btnEscribir.hide()
+	btnEscribir2.hide()
+	btnEscribir3.hide()
+	
 	pag += 1
 	$btnTextoNotas.text = paginas[pag]["texto"]
 	$numeroPagina.text = "Pagina " + str(pag +1)
@@ -62,6 +70,14 @@ func _on_siguiente_pag_pressed() -> void:
 
 
 func _on_anterior_pag_pressed() -> void:
+	var btnEscribir = get_parent().get_node("entregable/btnEscribir")
+	var btnEscribir2 = get_parent().get_node("entregable/btnEscribir2")
+	var btnEscribir3 = get_parent().get_node("entregable/btnEscribir3")
+	
+	btnEscribir.hide()
+	btnEscribir2.hide()
+	btnEscribir3.hide()
+	
 	pag -= 1
 	$btnTextoNotas.text = paginas[pag]["texto"]
 	$numeroPagina.text = "Pagina " + str(pag +1)
@@ -81,6 +97,14 @@ func _on_btn_texto_notas_pressed() -> void:
 		var btnEscribir2 = get_parent().get_node("entregable/btnEscribir2")
 		var btnEscribir3 = get_parent().get_node("entregable/btnEscribir3")
 		
+		var btnBorrar = get_parent().get_node("entregable/btnBorrar")
+		var btnBorrar2 = get_parent().get_node("entregable/btnBorrar2")
+		var btnBorrar3 = get_parent().get_node("entregable/btnBorrar3")
+		
+		btnBorrar.hide()
+		btnBorrar2.hide()
+		btnBorrar3.hide()
+		
 		if btnEscribir.visible == false and global.paragraph[0] == 0: 
 			btnEscribir.show()
 		else:
@@ -95,3 +119,6 @@ func _on_btn_texto_notas_pressed() -> void:
 			btnEscribir3.show()
 		else:
 			btnEscribir3.hide()
+	else:
+		$sndError.play()
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bumnqdkwapr0f"]
+[gd_scene load_steps=23 format=3 uid="uid://bumnqdkwapr0f"]
 
 [ext_resource type="Script" uid="uid://yuqxaw1ouaiw" path="res://scripts/nivel_1.gd" id="1_lgf0p"]
 [ext_resource type="Texture2D" uid="uid://beusa6lgul7dl" path="res://imagenes/bgNivel.png" id="2_bvwj0"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://buqnmr5i4wi5w" path="res://imagenes/GenaCheckList.png" id="11_622t7"]
 [ext_resource type="Script" uid="uid://c7g8s0heymb4f" path="res://scripts/gena_nivel1.gd" id="12_14whf"]
 [ext_resource type="PackedScene" uid="uid://3lrhs005iu6k" path="res://escenas/tablon_tareas.tscn" id="13_8n3lj"]
+[ext_resource type="PackedScene" uid="uid://pgis8iaqgulj" path="res://escenas/menu_pausa.tscn" id="14_8lvc2"]
 [ext_resource type="PackedScene" uid="uid://8myofaifv6pk" path="res://escenas/notas_1.tscn" id="14_dt1ax"]
 [ext_resource type="PackedScene" uid="uid://b2l84bu2dm6gg" path="res://escenas/entregable.tscn" id="15_vpnp5"]
 [ext_resource type="PackedScene" uid="uid://cby6sg4fvukrs" path="res://escenas/gena.tscn" id="16_2sgaa"]
@@ -117,6 +118,43 @@ _data = {
 &"RESET": SubResource("Animation_yyrpj")
 }
 
+[sub_resource type="Animation" id="Animation_8lvc2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InterfaceTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(787, 34)]
+}
+
+[sub_resource type="Animation" id="Animation_4a01a"]
+resource_name = "Time"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InterfaceTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 5.8, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(787, 34), Vector2(787, 50), Vector2(787, 50), Vector2(787, 34)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lgf0p"]
+_data = {
+&"RESET": SubResource("Animation_8lvc2"),
+&"Time": SubResource("Animation_4a01a")
+}
+
 [node name="Nivel 1" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -150,9 +188,9 @@ texture_hover = ExtResource("5_lnmr5")
 
 [node name="Reloj" parent="InterfaceTop" instance=ExtResource("6_biv72")]
 offset_left = -220.0
-offset_top = -28.0
+offset_top = -32.0
 offset_right = -220.0
-offset_bottom = -28.0
+offset_bottom = -32.0
 
 [node name="Label" type="Label" parent="InterfaceTop"]
 offset_left = -174.0
@@ -177,6 +215,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_yyrpj")
 }
 
+[node name="AnimInterface" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lgf0p")
+}
+
 [node name="TablonTareas2" parent="." instance=ExtResource("13_8n3lj")]
 position = Vector2(189, 191)
 
@@ -188,7 +231,12 @@ position = Vector2(648, 399)
 
 [node name="MusicaNivel" parent="." instance=ExtResource("16_lgf0p")]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="menuPausa" parent="CanvasLayer" instance=ExtResource("14_8lvc2")]
+
 [node name="Gena" parent="." instance=ExtResource("16_2sgaa")]
 layout_mode = 1
 
+[connection signal="pressed" from="InterfaceTop/BtnPausa" to="." method="_on_btn_pausa_pressed"]
 [connection signal="animation_finished" from="AnimationGena" to="." method="_on_animation_gena_animation_finished"]

@@ -1,9 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://b2l84bu2dm6gg"]
+[gd_scene load_steps=17 format=3 uid="uid://b2l84bu2dm6gg"]
 
 [ext_resource type="Texture2D" uid="uid://wr88cm8anujv" path="res://imagenes/entregable2.png" id="1_b1j6c"]
 [ext_resource type="Script" uid="uid://dnx4u41steun7" path="res://scripts/entregable.gd" id="1_kpbha"]
 [ext_resource type="Texture2D" uid="uid://cct47oh10culh" path="res://lapiz.png" id="3_3ef16"]
 [ext_resource type="Texture2D" uid="uid://c7rnpb55ik14" path="res://imagenes/lapizWhite.png" id="4_msg20"]
+[ext_resource type="Texture2D" uid="uid://fk3c32ly5ieq" path="res://imagenes/borrar.png" id="5_xwtfv"]
+[ext_resource type="Texture2D" uid="uid://dfiyaklrrtnqw" path="res://imagenes/borrarHover.png" id="6_yu6bs"]
+[ext_resource type="AudioStream" uid="uid://cgyt7sn2x840m" path="res://sonidos/sfx/sndError.mp3" id="7_6tyvk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msg20"]
 
@@ -230,14 +233,14 @@ anchor_left = 0.497
 anchor_top = 0.35500002
 anchor_right = 0.497
 anchor_bottom = 0.35500002
-offset_left = -89.0
+offset_left = -79.0
 offset_top = -136.0
-offset_right = 89.0
+offset_right = 99.0
 offset_bottom = -72.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.24347246, 0.29725352, 0.3947296, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 26
 text = "Escribiendo ..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -249,14 +252,14 @@ anchor_left = 0.497
 anchor_top = 0.35500002
 anchor_right = 0.497
 anchor_bottom = 0.35500002
-offset_left = -89.0
+offset_left = -79.0
 offset_top = 6.0
-offset_right = 89.0
+offset_right = 99.0
 offset_bottom = 69.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.24347246, 0.29725352, 0.3947296, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 26
 text = "Escribiendo ..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -268,24 +271,60 @@ anchor_left = 0.497
 anchor_top = 0.35500002
 anchor_right = 0.497
 anchor_bottom = 0.35500002
-offset_left = -89.0
+offset_left = -79.0
 offset_top = 159.0
-offset_right = 89.0
+offset_right = 99.0
 offset_bottom = 222.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.24347246, 0.29725352, 0.3947296, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 26
 text = "Escribiendo ..."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="btnBorrar" type="TextureButton" parent="."]
+visible = false
+offset_left = 240.0
+offset_top = -144.0
+offset_right = 295.0
+offset_bottom = -89.0
+texture_normal = ExtResource("5_xwtfv")
+texture_hover = ExtResource("6_yu6bs")
+
+[node name="btnBorrar2" type="TextureButton" parent="."]
+visible = false
+offset_left = 240.0
+offset_top = 2.0
+offset_right = 295.0
+offset_bottom = 57.0
+texture_normal = ExtResource("5_xwtfv")
+texture_hover = ExtResource("6_yu6bs")
+
+[node name="btnBorrar3" type="TextureButton" parent="."]
+visible = false
+offset_left = 240.0
+offset_top = 149.0
+offset_right = 295.0
+offset_bottom = 204.0
+texture_normal = ExtResource("5_xwtfv")
+texture_hover = ExtResource("6_yu6bs")
 
 [node name="AnimationEscribiendo" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_qve5v")
 }
 
+[node name="sndError" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_6tyvk")
+
+[connection signal="pressed" from="parrafo1" to="." method="_on_parrafo_1_pressed"]
+[connection signal="pressed" from="parrafo2" to="." method="_on_parrafo_2_pressed"]
+[connection signal="pressed" from="parrafo3" to="." method="_on_parrafo_3_pressed"]
 [connection signal="pressed" from="btnEscribir" to="." method="_on_btn_escribir_pressed"]
 [connection signal="pressed" from="btnEscribir2" to="." method="_on_btn_escribir_2_pressed"]
 [connection signal="pressed" from="btnEscribir3" to="." method="_on_btn_escribir_3_pressed"]
+[connection signal="pressed" from="btnBorrar" to="." method="_on_btn_borrar_pressed"]
+[connection signal="pressed" from="btnBorrar2" to="." method="_on_btn_borrar_2_pressed"]
+[connection signal="pressed" from="btnBorrar3" to="." method="_on_btn_borrar_3_pressed"]
 [connection signal="animation_finished" from="AnimationEscribiendo" to="." method="_on_animation_escribiendo_animation_finished"]

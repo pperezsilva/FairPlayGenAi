@@ -6,7 +6,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	lblReloj.text = "6:00 PM"
+	lblReloj.text = "8:00 PM"
 	lblTexto1.text = "1.- Explica una ventaja ambiental de la energía solar."
 	lblTexto2.text = "2.- Describe un reto o limitación de la energía solar."
 	lblTexto3.text = "3.- Menciona una aplicación práctica de la energía solar."
