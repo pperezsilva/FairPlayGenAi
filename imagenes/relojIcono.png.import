@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv4hf5hykhfvx"
-path="res://.godot/imported/TablonTareas2.png-98f1bb15eca38a423716f0a7ac19535f.ctex"
+uid="uid://b2jso1xkfv1tg"
+path="res://.godot/imported/relojIcono.png-11fae2bd2aaacd36d80c040943987042.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagenes/TablonTareas2.png"
-dest_files=["res://.godot/imported/TablonTareas2.png-98f1bb15eca38a423716f0a7ac19535f.ctex"]
+source_file="res://imagenes/relojIcono.png"
+dest_files=["res://.godot/imported/relojIcono.png-11fae2bd2aaacd36d80c040943987042.ctex"]
 
 [params]
 

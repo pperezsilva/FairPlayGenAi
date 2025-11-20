@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2l84bu2dm6gg"]
+[gd_scene load_steps=25 format=3 uid="uid://b2l84bu2dm6gg"]
 
 [ext_resource type="Texture2D" uid="uid://wr88cm8anujv" path="res://imagenes/entregable2.png" id="1_b1j6c"]
 [ext_resource type="Script" uid="uid://dnx4u41steun7" path="res://scripts/entregable.gd" id="1_kpbha"]
@@ -7,6 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://fk3c32ly5ieq" path="res://imagenes/borrar.png" id="5_xwtfv"]
 [ext_resource type="Texture2D" uid="uid://dfiyaklrrtnqw" path="res://imagenes/borrarHover.png" id="6_yu6bs"]
 [ext_resource type="AudioStream" uid="uid://cgyt7sn2x840m" path="res://sonidos/sfx/sndError.mp3" id="7_6tyvk"]
+[ext_resource type="Texture2D" uid="uid://dykk5u03jer7d" path="res://imagenes/enviarTareaDisable.png" id="8_5aygm"]
+[ext_resource type="Texture2D" uid="uid://cju5aoqjvhc3r" path="res://imagenes/enviarTarea.png" id="9_24y0l"]
+[ext_resource type="Texture2D" uid="uid://ces7hse7fuuip" path="res://imagenes/enviarTareaHover.png" id="10_amwgf"]
+[ext_resource type="Texture2D" uid="uid://bu1f8a4kb5rjy" path="res://imagenes/carga.png" id="11_amwgf"]
+[ext_resource type="Texture2D" uid="uid://ki4utfky1q23" path="res://imagenes/ia.png" id="12_5l275"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msg20"]
 
@@ -109,6 +114,68 @@ _data = {
 &"Escribiendo2": SubResource("Animation_vt5qv"),
 &"Escribiendo3": SubResource("Animation_1h7qt"),
 &"RESET": SubResource("Animation_qve5v")
+}
+
+[sub_resource type="Animation" id="Animation_amwgf"]
+resource_name = "Cargando"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CargaGena:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CargaGena:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.2041667, 1.2041667), Vector2(1.4, 1.4)]
+}
+
+[sub_resource type="Animation" id="Animation_xtxdu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CargaGena:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CargaGena:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.2041667, 1.2041667)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5l275"]
+_data = {
+&"Cargando": SubResource("Animation_amwgf"),
+&"RESET": SubResource("Animation_xtxdu")
 }
 
 [node name="entregable" type="Node2D"]
@@ -318,6 +385,43 @@ libraries = {
 [node name="sndError" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_6tyvk")
 
+[node name="btnEnviarTarea" type="TextureButton" parent="."]
+offset_left = 67.0
+offset_top = 246.0
+offset_right = 291.0
+offset_bottom = 319.0
+texture_normal = ExtResource("10_amwgf")
+texture_hover = ExtResource("9_24y0l")
+texture_disabled = ExtResource("8_5aygm")
+
+[node name="CargaGena" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.2041667, 1.2041667)
+texture = ExtResource("11_amwgf")
+
+[node name="AnimationGenerando" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5l275")
+}
+
+[node name="isIA" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-147, -165)
+scale = Vector2(0.27708328, 0.27708328)
+texture = ExtResource("12_5l275")
+
+[node name="isIA2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-146.88126, -25.375004)
+scale = Vector2(0.27708328, 0.27708328)
+texture = ExtResource("12_5l275")
+
+[node name="isIA3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-146.88126, 124.625)
+scale = Vector2(0.27708328, 0.27708328)
+texture = ExtResource("12_5l275")
+
 [connection signal="pressed" from="parrafo1" to="." method="_on_parrafo_1_pressed"]
 [connection signal="pressed" from="parrafo2" to="." method="_on_parrafo_2_pressed"]
 [connection signal="pressed" from="parrafo3" to="." method="_on_parrafo_3_pressed"]
@@ -328,3 +432,4 @@ stream = ExtResource("7_6tyvk")
 [connection signal="pressed" from="btnBorrar2" to="." method="_on_btn_borrar_2_pressed"]
 [connection signal="pressed" from="btnBorrar3" to="." method="_on_btn_borrar_3_pressed"]
 [connection signal="animation_finished" from="AnimationEscribiendo" to="." method="_on_animation_escribiendo_animation_finished"]
+[connection signal="pressed" from="btnEnviarTarea" to="." method="_on_btn_enviar_tarea_pressed"]

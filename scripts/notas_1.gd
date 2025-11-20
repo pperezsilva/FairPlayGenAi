@@ -9,32 +9,38 @@ func _ready() -> void:
 		0: {
 			"texto": "La energía solar ayuda a reducir las emisiones de gases de efecto invernadero.",
 			"parafraseo": "El uso de paneles solares contribuye a disminuir la cantidad de dióxido de carbono liberado a la atmósfera, favoreciendo un entorno más limpio y sostenible.",
-			"correcta": true  # Requerimiento 1
+			"correcta": true,
+			"requerimiento": 1
 		},
 		1: {
 			"texto": "Los paneles solares pueden ocupar grandes extensiones de terreno.",
 			"parafraseo": "En algunos casos, las instalaciones solares requieren amplias superficies, lo que puede representar un desafío en áreas con espacio limitado o con otros usos del suelo.",
-			"correcta": true  # Requerimiento 2
+			"correcta": true,
+			"requerimiento": 2
 		},
 		2: {
 			"texto": "El almacenamiento de energía solar aún depende de baterías de alto costo.",
 			"parafraseo": "Aunque las tecnologías de almacenamiento han mejorado, las baterías necesarias para conservar la energía solar suelen ser costosas y requieren mantenimiento constante.",
-			"correcta": false  # Trampa: es un reto, pero no el principal que se busca
+			"correcta": false,  # Trampa: es un reto, pero no el principal que se busca
+			"requerimiento": 0
 		},
 		3: {
 			"texto": "El viento también es una fuente de energía renovable ampliamente utilizada.",
 			"parafraseo": "Al igual que el sol, el viento se considera una fuente natural e inagotable que puede generar electricidad mediante aerogeneradores.",
-			"correcta": false  # Trampa: habla de energía renovable, pero no solar
+			"correcta": false,  # Trampa: habla de energía renovable, pero no solar
+			"requerimiento": 0
 		},
 		4: {
 			"texto": "Los paneles solares funcionan de forma más eficiente en zonas con alta radiación solar.",
 			"parafraseo": "Las regiones con más horas de sol directo suelen obtener un mejor rendimiento energético, aunque esto no siempre garantiza el aprovechamiento máximo.",
-			"correcta": false  # Trampa: parece ventaja, pero es una condición, no una ventaja ambiental
+			"correcta": false,  # Trampa: parece ventaja, pero es una condición, no una ventaja ambiental
+			"requerimiento": 0
 		},
 		5: {
 			"texto": "La energía solar puede aprovecharse para calentar agua en hogares y edificios.",
 			"parafraseo": "Los sistemas térmicos solares permiten transformar la radiación solar en calor útil, empleado en duchas, piscinas y procesos industriales.",
-			"correcta": true  # Requerimiento 3
+			"correcta": true,  # Requerimiento 3
+			"requerimiento": 3
 		}
 	}
 	
@@ -45,7 +51,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
@@ -90,9 +96,17 @@ func _on_anterior_pag_pressed() -> void:
 
 
 func _on_btn_texto_notas_pressed() -> void:
+	var opcionesGena = get_parent().get_node("opcionesGena")
+	
+	if opcionesGena.visible:
+		opcionesGena.hide()
+	
+	
 	if global.action == false:
-		global.select = paginas[pag]["parafraseo"]
-		print(global.select)
+		global.select["texto"] = paginas[pag]["parafraseo"]
+		global.select["correcta"] = paginas[pag]["correcta"]
+		global.select["requerimiento"] = paginas[pag]["requerimiento"]
+		
 		var btnEscribir = get_parent().get_node("entregable/btnEscribir")
 		var btnEscribir2 = get_parent().get_node("entregable/btnEscribir2")
 		var btnEscribir3 = get_parent().get_node("entregable/btnEscribir3")
@@ -104,6 +118,7 @@ func _on_btn_texto_notas_pressed() -> void:
 		btnBorrar.hide()
 		btnBorrar2.hide()
 		btnBorrar3.hide()
+		
 		
 		if btnEscribir.visible == false and global.paragraph[0] == 0: 
 			btnEscribir.show()

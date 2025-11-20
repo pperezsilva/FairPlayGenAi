@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cby6sg4fvukrs"]
+[gd_scene load_steps=28 format=3 uid="uid://cby6sg4fvukrs"]
 
 [ext_resource type="Script" uid="uid://bowvm52g28x5u" path="res://scripts/gena.gd" id="1_m6104"]
 [ext_resource type="Texture2D" uid="uid://cdl8c3mwrqu4i" path="res://imagenes/GenaVeryHappy.png" id="1_o6lgn"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://buqnmr5i4wi5w" path="res://imagenes/GenaCheckList.png" id="2_m6104"]
 [ext_resource type="FontFile" uid="uid://crl5bcgo6l6mb" path="res://fuentes/Gagalin-Regular.otf" id="3_vi7vd"]
 [ext_resource type="Texture2D" uid="uid://chkryr80iokvj" path="res://imagenes/GenaFlying.png" id="4_0hla7"]
+[ext_resource type="Texture2D" uid="uid://cew20muvw1bl7" path="res://imagenes/GenaMirandoArriba.png" id="7_dwq74"]
+[ext_resource type="AudioStream" uid="uid://cwp42vkq237jb" path="res://sonidos/sfx/sndTarea.mp3" id="9_b3dit"]
+[ext_resource type="Texture2D" uid="uid://dr43o5ugnfr3u" path="res://imagenes/GenaReloj.png" id="10_ltm83"]
+[ext_resource type="PackedScene" uid="uid://3lrhs005iu6k" path="res://escenas/tablon_tareas.tscn" id="10_t5pvc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eevyr"]
 bg_color = Color(0.37275803, 0.7053422, 0.99999994, 1)
@@ -175,12 +179,102 @@ tracks/2/keys = {
 "values": [Vector2(371, 470.00003)]
 }
 
+[sub_resource type="Animation" id="Animation_gy260"]
+resource_name = "VeryHappy"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gena:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_o6lgn")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gena:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(371, 470), Vector2(371, 460)]
+}
+
+[sub_resource type="Animation" id="Animation_a0j0v"]
+resource_name = "genaReloj"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gena:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_ltm83")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gena:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(371, 470.00003), Vector2(371, 460)]
+}
+
+[sub_resource type="Animation" id="Animation_b3dit"]
+resource_name = "nuevaTarea"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gena:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_dwq74")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gena:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(371, 470.00003), Vector2(371, 460)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0hla7"]
 _data = {
 &"ChecklistDefault": SubResource("Animation_0hla7"),
 &"Elevacion": SubResource("Animation_m6104"),
 &"FliyingAway": SubResource("Animation_eevyr"),
-&"RESET": SubResource("Animation_vi7vd")
+&"RESET": SubResource("Animation_vi7vd"),
+&"VeryHappy": SubResource("Animation_gy260"),
+&"genaReloj": SubResource("Animation_a0j0v"),
+&"nuevaTarea": SubResource("Animation_b3dit")
 }
 
 [sub_resource type="Animation" id="Animation_27ifb"]
@@ -218,6 +312,42 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_27ifb"),
 &"show": SubResource("Animation_dwq74")
+}
+
+[sub_resource type="Animation" id="Animation_t5pvc"]
+resource_name = "animInterface"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TablonTareas:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ltm83"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TablonTareas:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gy260"]
+_data = {
+&"EntradaTablonTareas": SubResource("Animation_t5pvc"),
+&"RESET": SubResource("Animation_ltm83")
 }
 
 [node name="Gena" type="Control"]
@@ -275,6 +405,10 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_vi7vd")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vi7vd")
 text = "Continuar"
 
+[node name="TablonTareas" parent="." instance=ExtResource("10_t5pvc")]
+visible = false
+position = Vector2(189, 191)
+
 [node name="Gena" type="Sprite2D" parent="."]
 position = Vector2(371, 470.00003)
 scale = Vector2(0.5556178, 0.55561787)
@@ -291,5 +425,14 @@ libraries = {
 &"": SubResource("AnimationLibrary_b3dit")
 }
 
+[node name="AnimationInterface" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gy260")
+}
+
+[node name="sndTarea" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_b3dit")
+
 [connection signal="pressed" from="TextBox/Button" to="." method="_on_button_pressed"]
 [connection signal="animation_finished" from="AnimationGena" to="." method="_on_animation_gena_animation_finished"]
+[connection signal="animation_finished" from="AnimationInterface" to="." method="_on_animation_interface_animation_finished"]
