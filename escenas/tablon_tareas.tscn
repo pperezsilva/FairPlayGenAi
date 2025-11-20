@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://3lrhs005iu6k"]
+[gd_scene load_steps=8 format=3 uid="uid://3lrhs005iu6k"]
 
 [ext_resource type="Script" uid="uid://cqywongg2yfbm" path="res://scripts/tablon_tareas.gd" id="1_ugwb5"]
-[ext_resource type="Texture2D" uid="uid://crtvbiuul6xhk" path="res://imagenes/TablonTareas2.png" id="2_ii3hn"]
+[ext_resource type="Texture2D" uid="uid://dv4hf5hykhfvx" path="res://imagenes/TablonTareas2.png" id="2_ii3hn"]
 [ext_resource type="FontFile" uid="uid://ccpaegydw1w7f" path="res://fuentes/DS-DIGIB.ttf" id="2_ugwb5"]
+[ext_resource type="FontFile" uid="uid://cau71hgpl3dy3" path="res://fuentes/University.otf" id="4_ii3hn"]
+[ext_resource type="Texture2D" uid="uid://b2jso1xkfv1tg" path="res://imagenes/relojIcono.png" id="5_6w0eq"]
+[ext_resource type="Texture2D" uid="uid://5se2tt4ysn4t" path="res://imagenes/iniciar.png" id="6_yjiuh"]
+[ext_resource type="Texture2D" uid="uid://brexyfxyn5u8t" path="res://imagenes/iniciarHover.png" id="7_4nahc"]
 
 [node name="TablonTareas" type="Node2D"]
 script = ExtResource("1_ugwb5")
@@ -11,41 +15,64 @@ script = ExtResource("1_ugwb5")
 texture = ExtResource("2_ii3hn")
 
 [node name="lblReloj" type="Label" parent="."]
-offset_left = -17.0
-offset_top = -60.0
-offset_right = 90.0
-offset_bottom = -26.0
+offset_left = -22.0
+offset_top = 65.0
+offset_right = 85.0
+offset_bottom = 99.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_ugwb5")
 theme_override_font_sizes/font_size = 30
 text = "Placeh"
 
 [node name="lblTexto1" type="Label" parent="."]
-offset_left = -129.0
-offset_top = -21.0
-offset_right = 131.0
-offset_bottom = 26.0
+offset_left = -128.0
+offset_top = -63.0
+offset_right = 132.0
+offset_bottom = -16.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("4_ii3hn")
+theme_override_font_sizes/font_size = 20
 text = "Placehorder"
+horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="lblTexto2" type="Label" parent="."]
-offset_left = -129.0
-offset_top = 31.0
-offset_right = 131.0
-offset_bottom = 78.0
+offset_left = -133.0
+offset_top = -25.0
+offset_right = 148.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 14
-text = "Placehorder"
+theme_override_font_sizes/font_size = 12
 autowrap_mode = 3
 
 [node name="lblTexto3" type="Label" parent="."]
-offset_left = -129.0
-offset_top = 86.0
-offset_right = 131.0
-offset_bottom = 133.0
+offset_left = -133.0
+offset_top = 1.0
+offset_right = 147.0
+offset_bottom = 27.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 14
-text = "Placehorder"
+theme_override_font_sizes/font_size = 12
 autowrap_mode = 3
+
+[node name="lblTexto4" type="Label" parent="."]
+offset_left = -133.0
+offset_top = 31.0
+offset_right = 147.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+autowrap_mode = 3
+
+[node name="spriteReloj" type="Sprite2D" parent="."]
+position = Vector2(-53, 79)
+texture = ExtResource("5_6w0eq")
+
+[node name="btnIniciar" type="TextureButton" parent="."]
+visible = false
+offset_left = -71.0
+offset_top = 121.0
+offset_right = 79.0
+offset_bottom = 170.0
+texture_normal = ExtResource("6_yjiuh")
+texture_hover = ExtResource("7_4nahc")
+
+[connection signal="pressed" from="btnIniciar" to="." method="_on_btn_iniciar_pressed"]

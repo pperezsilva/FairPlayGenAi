@@ -31,6 +31,7 @@ var minuto_actual: int
 var es_am: bool
 var tick_contador: int = 0
 var en_alerta: bool = false
+var primeraVez = true
 
 func _ready() -> void:
 	reloj_label.add_theme_font_size_override("font_size", 50)
@@ -41,17 +42,27 @@ func _ready() -> void:
 	es_am = am_inicio
 	tick_contador = 0
 	en_alerta = false
+	
 
 	actualizar_label()
 
 	timer.wait_time = max(0.01, segundos_por_tick)
 	timer.one_shot = false
-	timer.start()
+	
+	if global.relojActivo == true:
+		timer.start()
 
 	# al inicio siempre estado normal
 	gblVarEdoMusica.estado_musica = 0
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
+	if global.relojActivo == false:
+		return
+	
+	if global.relojActivo == true and primeraVez == true:
+		timer.start()
+		primeraVez = false
+	
 	if global.action == true:
 		timer.wait_time = 1
 		global.musicfast = true
@@ -63,10 +74,9 @@ func _process(delta: float) -> void:
 func _on_Timer_timeout() -> void:
 	avanzar_tiempo()
 	actualizar_label()
-
 	verificar_alerta()
 	_reproducir_tick()
-
+	
 	if _hora_terminada():
 		timer.stop()
 

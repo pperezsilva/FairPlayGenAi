@@ -75,88 +75,191 @@ offset_bottom = -186.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("4_043r0")
 theme_override_font_sizes/font_size = 40
-text = "PUNTUACION"
+text = "Resultados del nivel"
+
+[node name="Parrafo1" type="Label" parent="TablonResultados"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -738.5
+offset_top = -175.0
+offset_right = -409.5
+offset_bottom = -100.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_043r0")
+theme_override_font_sizes/font_size = 25
+text = "Parrafo 1"
+horizontal_alignment = 1
+
+[node name="R1" type="Label" parent="TablonResultados/Parrafo1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 242.5
+offset_top = -5.0
+offset_right = 294.5
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_043r0")
+theme_override_font_sizes/font_size = 30
+text = "---"
+
+[node name="Parrafo2" type="Label" parent="TablonResultados"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -739.5
+offset_top = -110.0
+offset_right = -410.5
+offset_bottom = -35.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_043r0")
+theme_override_font_sizes/font_size = 25
+text = "Parrafo 2"
+horizontal_alignment = 1
+
+[node name="R2" type="Label" parent="TablonResultados/Parrafo2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 242.5
+offset_top = -4.0
+offset_right = 294.5
+offset_bottom = 71.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_043r0")
+theme_override_font_sizes/font_size = 30
+text = "---"
+
+[node name="Parrafo3" type="Label" parent="TablonResultados"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -739.5
+offset_top = -44.0
+offset_right = -410.5
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_043r0")
+theme_override_font_sizes/font_size = 25
+text = "Parrafo 3"
+horizontal_alignment = 1
+
+[node name="R3" type="Label" parent="TablonResultados/Parrafo3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 242.5
+offset_top = -1.0
+offset_right = 294.5
+offset_bottom = 74.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_043r0")
+theme_override_font_sizes/font_size = 30
+text = "---"
+
+[node name="IAuse" type="Label" parent="TablonResultados"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -740.5
+offset_top = 24.0
+offset_right = -411.5
+offset_bottom = 99.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_043r0")
+theme_override_font_sizes/font_size = 25
+text = "Uso de IA"
+horizontal_alignment = 1
+
+[node name="RIAuse" type="Label" parent="TablonResultados/IAuse"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 242.5
+offset_top = -2.0
+offset_right = 294.5
+offset_bottom = 73.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_043r0")
+theme_override_font_sizes/font_size = 30
+text = "---"
+
+[node name="Separador" type="Label" parent="TablonResultados"]
+offset_left = -263.0
+offset_top = -243.0
+offset_right = 304.0
+offset_bottom = -188.0
+theme_override_font_sizes/font_size = 40
+text = "____________________________"
+
+[node name="SeparadorInferior" type="Label" parent="TablonResultados"]
+offset_left = -314.0
+offset_top = 129.0
+offset_right = 321.0
+offset_bottom = 184.0
+theme_override_font_sizes/font_size = 40
+text = "_____________________________________"
 
 [node name="Tiempo" type="Label" parent="TablonResultados"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -746.5
-offset_top = -157.0
-offset_right = -417.5
-offset_bottom = -82.0
+offset_left = -764.5
+offset_top = 90.0
+offset_right = -395.5
+offset_bottom = 165.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("4_043r0")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "TIEMPO"
+horizontal_alignment = 1
 
 [node name="RTiempo" type="Label" parent="TablonResultados/Tiempo"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 152.5
-offset_top = 4.0
-offset_right = 481.5
-offset_bottom = 79.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_043r0")
-theme_override_font_sizes/font_size = 40
-text = "10"
-
-[node name="Contenido" type="Label" parent="TablonResultados"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -746.5
-offset_top = -68.0
-offset_right = -417.5
-offset_bottom = 7.0
+offset_left = 247.5
+offset_top = -4.0
+offset_right = 324.5
+offset_bottom = 71.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("4_043r0")
 theme_override_font_sizes/font_size = 30
-text = "CONTENIDO"
+text = "---"
 
-[node name="RContenido" type="Label" parent="TablonResultados/Contenido"]
+[node name="Calificacion" type="Label" parent="TablonResultados"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -689.5
+offset_top = 190.0
+offset_right = -338.5
+offset_bottom = 265.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_043r0")
+theme_override_font_sizes/font_size = 40
+text = "calificacion"
+horizontal_alignment = 1
+
+[node name="RCalificacion" type="Label" parent="TablonResultados/Calificacion"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 157.5
-offset_top = -2.0
-offset_right = 486.5
-offset_bottom = 73.0
+offset_left = 222.5
+offset_top = -19.0
+offset_right = 295.5
+offset_bottom = 63.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("4_043r0")
-theme_override_font_sizes/font_size = 40
-text = "10"
-
-[node name="Informacion" type="Label" parent="TablonResultados"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -741.5
-offset_top = 26.0
-offset_right = -412.5
-offset_bottom = 101.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_043r0")
-theme_override_font_sizes/font_size = 30
-text = "informacion"
-
-[node name="RInformacion" type="Label" parent="TablonResultados/Informacion"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 149.5
-offset_top = -11.0
-offset_right = 478.5
-offset_bottom = 64.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_043r0")
-theme_override_font_sizes/font_size = 40
-text = "10"
+theme_override_font_sizes/font_size = 60
+text = "---"
 
 [node name="AnimationTablonResultados" type="AnimationPlayer" parent="."]
 libraries = {

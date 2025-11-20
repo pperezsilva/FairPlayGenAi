@@ -7,14 +7,14 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
 func _on_button_aceptar_pressed() -> void:
 	click.play(0.4)
 	await get_tree().create_timer(0.2).timeout
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
 
 
 func _on_button_cancelar_pressed() -> void:

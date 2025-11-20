@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv4hf5hykhfvx"
-path="res://.godot/imported/TablonTareas2.png-98f1bb15eca38a423716f0a7ac19535f.ctex"
+uid="uid://ces7hse7fuuip"
+path="res://.godot/imported/enviarTareaHover.png-47dda5bc1aaf0b7ed66e8064af8d9e53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagenes/TablonTareas2.png"
-dest_files=["res://.godot/imported/TablonTareas2.png-98f1bb15eca38a423716f0a7ac19535f.ctex"]
+source_file="res://imagenes/enviarTareaHover.png"
+dest_files=["res://.godot/imported/enviarTareaHover.png-47dda5bc1aaf0b7ed66e8064af8d9e53.ctex"]
 
 [params]
 

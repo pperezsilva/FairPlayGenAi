@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv4hf5hykhfvx"
-path="res://.godot/imported/TablonTareas2.png-98f1bb15eca38a423716f0a7ac19535f.ctex"
+uid="uid://cen2fl72jsi7n"
+path="res://.godot/imported/Lupita.png-30fd5e2183d79665582834cbac515ed3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagenes/TablonTareas2.png"
-dest_files=["res://.godot/imported/TablonTareas2.png-98f1bb15eca38a423716f0a7ac19535f.ctex"]
+source_file="res://imagenes/Lupita.png"
+dest_files=["res://.godot/imported/Lupita.png-30fd5e2183d79665582834cbac515ed3.ctex"]
 
 [params]
 

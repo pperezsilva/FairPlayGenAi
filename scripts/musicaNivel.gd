@@ -10,7 +10,7 @@ func _ready() -> void:
 	musica_tranquila.play()
 	musica_tension.stop()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Si el estado global cambia, actualizamos la música
 	if gblVarEdoMusica.estado_musica != estado_anterior:
 		estado_anterior = gblVarEdoMusica.estado_musica
